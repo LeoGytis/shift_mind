@@ -1,31 +1,77 @@
+import guarantee from "@/public/images/guarantee.svg";
+import payment from "@/public/images/payment.png";
+import Image from "next/image";
+
 const ChooseYourPlanSection = () => {
   return (
-    <div className="w-full container mx-auto h-96 bg-[#0C3F3D]">
+    <div className="w-full container mx-auto flex flex-col items-center gap-16 h-screen bg-[#0C3F3D] text-white py-10">
       <h1 className="text-center text-4xl font-bold">Choose Your Plan</h1>
-      <div className="w-full flex justify-center items-center gap-4">
-        <div className="flex gap-4 bg-white rounded-3xl py-4 px-6">
-          <div>0</div>
+      <div className="w-full flex justify-center items-center  text-[#0A3634] gap-4">
+        <div className="flex gap-4 bg-[#D7EEEB] rounded-3xl py-4 px-6">
+          <span className="w-5 h-5 rounded-full bg-[#A8C6C4]"></span>
           <div className="flex flex-col gap-2">
-            <span>3-month plan</span>
-            <span>Billed every 3 month</span>
-            <span>USD 125.98 USD 62.99</span>
+            <span className="text-xl font-bold">3-month plan</span>
+            <span className="text-xs">Billed every 3 month</span>h
+            <div className="text-xs space-x-1">
+              <span className="text-[#F175B9] line-through">USD 125.98</span>
+              <span className="font-bold"> USD 62.99</span>
+            </div>
           </div>
           <div className="flex flex-col gap-2">
-            <span>USD 0.99</span>
-            <span>USD 1.98 per day</span>
+            <div>
+              <span className="text-md text-sm font-semibold">USD</span>
+              <span className="text-3xl font-bold">0.99</span>
+            </div>
+            <span className="text-[#F175B9]">USD 1.38 per day</span>
           </div>
         </div>
-        <div className="py-4 px-6">CARD</div>h
-        <div className="py-4 px-6">CARD</div>
+        <div className="flex gap-4 bg-[#D7EEEB] rounded-3xl py-4 px-6">
+          <span className="w-5 h-5 rounded-full bg-[#A8C6C4]"></span>
+          <div className="flex flex-col gap-2">
+            <span className="text-xl font-bold">3-month plan</span>
+            <span className="text-xs">Billed every 3 month</span>
+            <div className="text-xs space-x-1">
+              <span className="text-[#F175B9] line-through">USD 125.98</span>
+              <span className="font-bold"> USD 62.99</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <div>
+              <span className="text-md text-sm font-semibold">USD</span>
+              <span className="text-3xl font-bold">0.99</span>
+            </div>
+            <span className="text-[#F175B9]">USD 1.38 per day</span>
+          </div>
+        </div>
+        <div className="flex gap-4 bg-[#D7EEEB] rounded-3xl py-4 px-6">
+          <span className="w-5 h-5 rounded-full bg-[#A8C6C4]"></span>
+          <div className="flex flex-col gap-2">
+            <span className="text-xl font-bold">3-month plan</span>
+            <span className="text-xs">Billed every 3 month</span>
+            <div className="text-xs space-x-1">
+              <span className="text-[#F175B9] line-through">USD 125.98</span>
+              <span className="font-bold"> USD 62.99</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <div>
+              <span className="text-md text-sm font-semibold">USD</span>
+              <span className="text-3xl font-bold">0.99</span>
+            </div>
+            <span className="text-[#F175B9]">USD 1.38 per day</span>
+          </div>
+        </div>
       </div>
 
       <p>
-        By selecting a payment method, you agree to the Terms & Conditions and
+        By selecting a hpayment method, you agree to the Terms & Conditions and
         Privacy Policy.
       </p>
-
-      <button>GET MY PLAN</button>
-      <p>
+      <div className="text-testColor">Test Color Background</div>
+      <button className="w-1/3 mx-auto bg-gradientmain text-testColor rounded-3xl py-6 button ">
+        GET MY PLAN
+      </button>
+      <p className="text-center text-xs">
         You are enrolling in 1 Month Plan subscription to https://shiftmind.app/
         service with the discount price $29.99. You agree that the plan you
         selected will automatically be extended at the full price for successive
@@ -35,19 +81,20 @@ const ChooseYourPlanSection = () => {
         customer support team via email at hello@shiftmind.app. Terms of Service
         the charge will appear on your bill as “ShiftMind”.
       </p>
-      <div>
-        <div>
-          <div>LOGO</div>
+      <div className="flex justify-between gap-4">
+        <div className="flex gap-2">
+          <Image src={guarantee} alt="Logo" width={52} height={52} />
           <div>
-            <span className="capitalize">RISK-FREE GUARANTEE</span>
-            <span>cancel at any time without being charged the full price</span>
+            <span className="text-xl font-extrabold capitalize">
+              RISK-FREE GUARANTEE
+            </span>{" "}
+            <span className="font-black">
+              cancel at any time without being charged the full price
+            </span>
           </div>
         </div>
-        <div>
-          <div>VISA</div>
-          <div>VISA</div>
-          <div>VISA</div>
-          <div>VISA</div>
+        <div className="relative w-1/2">
+          <Image src={payment} alt="payment" fill className="object-contain" />
         </div>
       </div>
     </div>
