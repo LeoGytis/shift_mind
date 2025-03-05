@@ -25,18 +25,18 @@ const PlanCard: React.FC<PlanCardProps> = ({
 }) => {
   return (
     <div
-      className={`relative flex flex-col bg-[#5A91FF] rounded-3xl ${
-        selected
-          ? "border-1 border-[#6B9EFF] active-shadow " // Tailwind shadow class
-          : "border border-transparent bg-transparent"
+      className={`relative flex flex-col bg-[#5A91FF] rounded-3xl border-2 border-transparent ${
+        selected ? "border-[#6B9EFF] active-shadow" : "bg-transparent"
       }`}
       onClick={onClick}
     >
       <div className="text-center text-white font-bold py-3">
-        {selected && <span className="uppercase">{choice}</span>}
+        <span className={`uppercase ${selected ? "block" : "invisible"}`}>
+          {choice}
+        </span>
       </div>
 
-      <div className="flex gap-4 bg-[#D7EEEB] rounded-3xl py-4 px-6 cursor-pointer transition-all">
+      <div className="flex gap-4 bg-[#D7EEEB] rounded-[22px] py-4 px-6 cursor-pointer transition-all">
         <span className="w-5 h-5 rounded-full bg-[#A8C6C4]"></span>
         <div className="flex flex-col gap-2">
           <span className="text-xl font-bold">{title}</span>
