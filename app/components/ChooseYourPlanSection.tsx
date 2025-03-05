@@ -59,7 +59,7 @@ const ChooseYourPlanSection = () => {
             <div className="flex gap-4">
               <Image src={guarantee} alt="Logo" width={52} height={52} />
               <div className="text-justify">
-                <span className="text-xl font-extrabold capitalize">
+                <span className="text-xl font-extrabold uppercase">
                   RISK-FREE GUARANTEE
                 </span>{" "}
                 <span className="text-sm font-medium">
