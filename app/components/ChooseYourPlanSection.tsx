@@ -1,11 +1,16 @@
+"use client";
 import guarantee from "@/public/images/guarantee.svg";
 import payment from "@/public/images/payment.png";
 import group4538 from "@/public/vectors/group4538.svg";
 import Image from "next/image";
+import { useState } from "react";
+import PlanCard from "./PlanCard";
+import { dummyCardData } from "./dummyCardData";
 
 const ChooseYourPlanSection = () => {
+  const [selectedPlan, setSelectedPlan] = useState<number>(0);
   return (
-    <section>
+    <section className="py-1">
       <div className="relative h-[180px]">
         <Image
           src={group4538}
@@ -14,79 +19,33 @@ const ChooseYourPlanSection = () => {
           className="object-cover"
         />
       </div>
-      <div className="w-full flex flex-col items-center gap-16 bg-[#0C3F3D] text-white py-10">
+      <div className="w-full flex flex-col items-center gap-13 bg-[#0C3F3D] text-white py-5">
         <h1 className="text-center text-4xl font-bold">Choose Your Plan</h1>
 
         {/* ----- Plans Article ----- */}
         <article className="w-full flex justify-center items-center  text-[#0A3634] gap-4">
-          <div className="flex gap-4 bg-[#D7EEEB] rounded-3xl py-4 px-6">
-            <span className="w-5 h-5 rounded-full bg-[#A8C6C4]"></span>
-            <div className="flex flex-col gap-2">
-              <span className="text-xl font-bold">3-month plan</span>
-              <span className="text-xs">Billed every 3 month</span>
-              <div className="text-xs space-x-1">
-                <span className="text-[#F175B9] line-through">USD 125.98</span>
-                <span className="font-bold"> USD 62.99</span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div>
-                <span className="text-md text-sm font-semibold">USD</span>
-                <span className="text-3xl font-bold">0.99</span>
-              </div>
-              <span className="text-[#F175B9]">USD 1.38 per day</span>
-            </div>
-          </div>
-          <div className="flex gap-4 bg-[#D7EEEB] rounded-3xl py-4 px-6">
-            <span className="w-5 h-5 rounded-full bg-[#A8C6C4]"></span>
-            <div className="flex flex-col gap-2">
-              <span className="text-xl font-bold">3-month plan</span>
-              <span className="text-xs">Billed every 3 month</span>
-              <div className="text-xs space-x-1">
-                <span className="text-[#F175B9] line-through">USD 125.98</span>
-                <span className="font-bold"> USD 62.99</span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div>
-                <span className="text-md text-sm font-semibold">USD</span>
-                <span className="text-3xl font-bold">0.99</span>
-              </div>
-              <span className="text-[#F175B9]">USD 1.38 per day</span>
-            </div>
-          </div>
-          <div className="flex gap-4 bg-[#D7EEEB] rounded-3xl py-4 px-6">
-            <span className="w-5 h-5 rounded-full bg-[#A8C6C4]"></span>
-            <div className="flex flex-col gap-2">
-              <span className="text-xl font-bold">3-month plan</span>
-              <span className="text-xs">Billed every 3 month</span>
-              <div className="text-xs space-x-1">
-                <span className="text-[#F175B9] line-through">USD 125.98</span>
-                <span className="font-bold"> USD 62.99</span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div>
-                <span className="text-md text-sm font-semibold">USD</span>
-                <span className="text-3xl font-bold">0.99</span>
-              </div>
-              <span className="text-[#F175B9]">USD 1.38 per day</span>
-            </div>
-          </div>
+          {dummyCardData.map((plan, index) => (
+            <PlanCard
+              key={index}
+              {...plan}
+              selected={selectedPlan === index}
+              onClick={() => setSelectedPlan(index)}
+            />
+          ))}
         </article>
 
         {/* ----- Description Article ----- */}
-        <article className="w-1/3 flex flex-col items-center gap-4 text-center">
-          <p>
+        <article className="w-1/2 flex flex-col items-center text-center">
+          <p className="text-sm mb-4">
             By selecting a hpayment method, you agree to the Terms & Conditions
             and Privacy Policy.
           </p>
-          <div className="text-testColor">Test Color Background</div>
-          <button className="w-1/3 mx-auto bg-gradientmain text-testColor rounded-3xl py-6 button ">
+          <button className="w-2/3 rounded-3xl button py-6 mb-8">
             GET MY PLAN
           </button>
-          <p className="text-center text-xs">
+          <p className="text-center text-xs mb-8">
             You are enrolling in 1 Month Plan subscription to
+            <br />
             https://shiftmind.app/ service with the discount price $29.99. You
             agree that the plan you selected will automatically be extended at
             the full price for successive renewal periods and you will be
@@ -96,22 +55,24 @@ const ChooseYourPlanSection = () => {
             email at hello@shiftmind.app. Terms of Service the charge will
             appear on your bill as “ShiftMind”.
           </p>
-          <div className="flex justify-between gap-4">
-            <div className="flex gap-2">
+          <div className="flex justify-between gap-10">
+            <div className="flex gap-4">
               <Image src={guarantee} alt="Logo" width={52} height={52} />
-              <div>
+              <div className="text-justify">
                 <span className="text-xl font-extrabold capitalize">
                   RISK-FREE GUARANTEE
                 </span>{" "}
-                <span className="font-black">
+                <span className="text-sm font-medium">
                   cancel at any time without being charged the full price
                 </span>
               </div>
             </div>
-            <div className="relative w-1/2">
+            <div className="relative w-2/3">
               <Image
                 src={payment}
                 alt="payment"
+                // width={261}
+                // height={261}
                 fill
                 className="object-contain"
               />
