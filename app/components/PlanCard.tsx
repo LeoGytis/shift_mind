@@ -1,61 +1,70 @@
-import React from "react";
+import React from 'react';
+import ellipse from '@/public/vectors/ellipse.svg';
+import ellipseSelected from '@/public/vectors/ellipseSelected.svg';
+import Image from 'next/image';
 
 interface PlanCardProps {
-  title: string;
-  billingCycle: string;
-  originalPrice: string;
-  discountedPrice: string;
-  mainPrice: string;
-  dailyPrice: string;
-  selected: boolean;
-  choice: string;
-  onClick: () => void;
+	title: string;
+	billingCycle: string;
+	originalPrice: string;
+	discountedPrice: string;
+	mainPrice: string;
+	dailyPrice: string;
+	selected: boolean;
+	choice: string;
+	onClick: () => void;
 }
 
 const PlanCard: React.FC<PlanCardProps> = ({
-  title,
-  billingCycle,
-  originalPrice,
-  discountedPrice,
-  mainPrice,
-  dailyPrice,
-  selected,
-  choice,
-  onClick,
+	title,
+	billingCycle,
+	originalPrice,
+	discountedPrice,
+	mainPrice,
+	dailyPrice,
+	selected,
+	choice,
+	onClick,
 }) => {
-  return (
-    <div
-      className={`relative flex flex-col bg-[#5A91FF] rounded-3xl border-2 border-transparent ${
-        selected ? "border-[#6B9EFF] active-shadow" : "bg-transparent"
-      }`}
-      onClick={onClick}
-    >
-      <div className="text-center text-white font-bold py-3">
-        <span className={`uppercase ${selected ? "block" : "invisible"}`}>
-          {choice}
-        </span>
-      </div>
+	return (
+		<div
+			className={`relative lg:w-1/3 flex flex-col bg-[#5A91FF] rounded-3xl border-2 border-transparent  ${
+				selected ? 'border-[#6B9EFF] active-shadow' : 'bg-transparent'
+			}`}
+			onClick={onClick}
+		>
+			<div className="text-center text-white font-bold py-3">
+				<span className={`uppercase ${selected ? 'block' : 'invisible'}`}>{choice}</span>
+			</div>
 
-      <div className="flex gap-4 bg-[#D7EEEB] rounded-[22px] py-4 px-6 cursor-pointer transition-all">
-        <span className="w-5 h-5 rounded-full bg-[#A8C6C4]"></span>
-        <div className="flex flex-col gap-2">
-          <span className="text-xl font-bold">{title}</span>
-          <span className="text-xs">{billingCycle}</span>
-          <div className="text-xs space-x-1">
-            <span className="text-[#F175B9] line-through">{originalPrice}</span>
-            <span className="font-bold">{discountedPrice}</span>
-          </div>
-        </div>
-        <div className="flex flex-col gap-2 items-end">
-          <div>
-            <span className="text-md text-sm font-semibold">USD</span>
-            <span className="text-3xl font-bold">{mainPrice}</span>
-          </div>
-          <span className="text-[#F175B9]">{dailyPrice}</span>
-        </div>
-      </div>
-    </div>
-  );
+			<div className="flex justify-between bg-[#D7EEEB] rounded-[22px] py-4 px-6 cursor-pointer text-[#0A3634] transition-all">
+				<div className="flex gap-4">
+					<Image src={ellipse} alt="section_top_vector" width={20} height={20} />
+					<Image src={ellipseSelected} alt="section_top_vector" width={20} height={20} />
+
+					{/* <span className="w-5 h-5 rounded-full bg-[#A8C6C4] mt-1"></span>
+					<span className="relative w-5 h-5 rounded-full bg-[#5A91FF] mt-1">
+						<span className="absolute inset-0 m-auto w-2 h-2 bg-white rounded-full "></span>
+					</span> */}
+					<div className="flex flex-col justify-between gap-2">
+						<span className="text-xl font-bold">{title}</span>
+						<span className="text-xs">{billingCycle}</span>
+						<div className="text-xs space-x-1">
+							<span className="text-[#F175B9] line-through">{originalPrice}</span>
+							<span className="font-bold">{discountedPrice}</span>
+						</div>
+					</div>
+				</div>
+				<div className="flex flex-col gap-2 items-end">
+					<div>
+						<span className="align-top text-md text-sm font-semibold">USD</span>
+						<span className="text-3xl font-bold">{mainPrice}</span>
+					</div>
+					<span className="text-[#F175B9] text-xs line-through">{dailyPrice}</span>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default PlanCard;
