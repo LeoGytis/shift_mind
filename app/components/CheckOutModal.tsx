@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import StepperNew from './StepperNew';
 import PaymentForm from './Checkout/PaymentForm';
+import union from '@/public/vectors/union.svg';
+import Image from 'next/image';
 
 interface ModalProps {
 	isOpen: boolean;
@@ -21,10 +23,10 @@ const Modal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 	if (!isOpen) return null;
 
 	return (
-		<div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-			<div className="bg-white rounded-lg p-6 w-full max-w-4xl relative">
-				<button onClick={onClose} className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl">
-					✕
+		<div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800/50">
+			<div className="relative w-full max-w-[600px] bg-white border border-greenlight rounded-3xl p-6">
+				<button onClick={onClose} className="absolute top-6 right-6 cursor-pointer">
+					<Image src={union} alt="close_icon" layout="intrinsic" className="object-contain" />
 				</button>
 
 				{/* Stepper Component */}
