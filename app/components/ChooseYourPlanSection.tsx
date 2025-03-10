@@ -6,9 +6,16 @@ import Image from 'next/image';
 import {useState} from 'react';
 import PlanCard from './PlanCard';
 import {dummyCardData} from './dummyCardData';
+import CheckOutModal from './CheckOutModal';
+import Modal from './CheckOutModal';
 
 const ChooseYourPlanSection = () => {
 	const [selectedPlan, setSelectedPlan] = useState<number>(0);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	const showModal = () => setIsModalOpen(true);
+	const closeModal = () => setIsModalOpen(false);
+
 	return (
 		<section className="w-full py-1">
 			<div className="relative h-[180px]">
@@ -33,9 +40,11 @@ const ChooseYourPlanSection = () => {
 					{/* ----- Description Article ----- */}
 					<article className="w-1/2 flex flex-col items-center text-center">
 						<p className="text-sm mb-4">
-							By selecting a hpayment method, you agree to the Terms & Conditions and Privacy Policy.
+							By selecting a payment method, you agree to the Terms & Conditions and Privacy Policy.
 						</p>
-						<button className="w-2/3 rounded-3xl button py-6 mb-8">GET MY PLAN</button>
+						<button onClick={showModal} className="w-2/3 rounded-3xl button py-6 mb-8">
+							GET MY PLAN
+						</button>
 						<p className="text-center text-xs mb-8">
 							You are enrolling in 1 Month Plan subscription to
 							<br />
@@ -57,14 +66,7 @@ const ChooseYourPlanSection = () => {
 								</div>
 							</div>
 							<div className="relative w-2/3">
-								<Image
-									src={payment}
-									alt="payment"
-									// width={261}
-									// height={261}
-									fill
-									className="object-contain"
-								/>
+								<Image src={payment} alt="payment" fill className="object-contain" />
 							</div>
 						</div>
 					</article>
@@ -73,6 +75,9 @@ const ChooseYourPlanSection = () => {
 			<div className="relative h-[180px]">
 				<Image src={group4538} alt="section_bottom_vector" fill className="object-cover transform rotate-180" />
 			</div>
+
+			{/* ----- Modal ----- */}
+			<Modal isOpen={isModalOpen} onClose={closeModal} />
 		</section>
 	);
 };

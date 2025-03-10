@@ -14,6 +14,7 @@ export default {
 			colors: {
 				testColor: '#ff00ff',
 				pinkmain: '#F175B9', //TO DO fix
+				electric: '#0E7A82',
 			},
 			backgroundImage: {
 				gradientmain: 'linear-gradient(90deg, #F175B9, #8089FF, #3DF7FF)',
