@@ -1,7 +1,7 @@
 'use client';
-import guarantee from '@/public/images/guarantee.svg';
-import payment from '@/public/images/payment.png';
-import group4538 from '@/public/vectors/group4538.svg';
+import guarantee from '@/public/vectors/guarantee.svg';
+import payment from '@/public/vectors/payment.svg';
+import sectionframe from '@/public/vectors/sectionframe.svg';
 import Image from 'next/image';
 import {useState} from 'react';
 import PlanCard from './PlanCard';
@@ -19,7 +19,7 @@ const ChooseYourPlanSection = () => {
 	return (
 		<section className="w-full py-1">
 			<div className="relative h-[180px]">
-				<Image src={group4538} alt="section_top_vector" fill className="object-cover" />
+				<Image src={sectionframe} alt="section_top_vector" fill className="object-cover" />
 			</div>
 			<div className="w-full bg-[#0C3F3D] text-white py-5">
 				<div className="container mx-auto flex flex-col items-center gap-13">
@@ -73,7 +73,12 @@ const ChooseYourPlanSection = () => {
 				</div>
 			</div>
 			<div className="relative h-[180px]">
-				<Image src={group4538} alt="section_bottom_vector" fill className="object-cover transform rotate-180" />
+				<Image
+					src={sectionframe}
+					alt="section_bottom_vector"
+					fill
+					className="object-cover transform rotate-180"
+				/>
 			</div>
 
 			{/* ----- Modal ----- */}

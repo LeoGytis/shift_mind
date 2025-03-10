@@ -1,33 +1,16 @@
 @import 'tailwindcss';
 
 :root {
-	/* --font-inter: 'Inter', sans-serif; */
-	/* --font-sans: var(--font-geist-sans); */
-	/* --font-mono: var(--font-geist-mono) */
-	--background: hsl(0, 0%, 100%);
+	--background: #ffffff;
 	--foreground: #171717;
-	--color-electric: #0e7a82;
-	--color-pink: #f175b9;
-	--gradient-main: linear-gradient(90deg, #f175b9, #8089ff, #3df7ff);
 }
 
 @theme {
-	--electric: #0e7a82;
-	--electric-light: #66b2a6;
-	--electric: #0e7a82;
-	--electric-dark: #005f4c;
-}
-
-.text-electric {
-	color: var(--color-electric);
-}
-
-.text-pink {
-	color: var(--color-pink);
-}
-
-.bg-electric {
-	background-color: var(--color-electric);
+	--color-electric: #0e7a82;
+	--color-pink: #f175b9;
+	--color-greenlight: #1e6864;
+	--color-greendark: #0a3634;
+	--color-gradient: linear-gradient(90deg, #f175b9, #8089ff, #3df7ff);
 }
 
 body {
@@ -36,9 +19,29 @@ body {
 	font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
-.button {
-	/* background: linear-gradient(90deg, #f175b9, #8089ff, #3df7ff); */
-	background: var(--gradient-main);
+h3 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--color-greendark);
+}
+
+input {
+	border: 1px solid var(--color-greenlight);
+	border-radius: 1rem;
+	background-color: #d7eeeb33;
+	padding: 1rem 2rem;
+}
+
+input:focus {
+	border-image: var(--gradient-main) 1;
+	border-style: solid; /* Ensure border style is applied */
+	border-radius: 1rem; /* Maintain border-radius on focus */
+	background-color: #fff;
+	outline: none;
+}
+
+.bg-button {
+	background: var(--color-gradient);
 	cursor: pointer;
 }
 
