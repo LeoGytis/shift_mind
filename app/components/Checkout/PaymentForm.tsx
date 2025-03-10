@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
 import paypal from '@/public/vectors/paypal.svg';
 import apple from '@/public/vectors/apple.svg';
+import creditcardpink from '@/public/vectors/creditcardpink.svg';
 import visa from '@/public/vectors/visa.svg';
 import mastercardyellow from '@/public/vectors/mastercardyellow.svg';
 import discover from '@/public/vectors/discover.svg';
@@ -102,8 +102,8 @@ const PaymentForm = () => {
 					name="cardNumber"
 					control={control}
 					render={({field}) => (
-						<div>
-							<span className="absolute left-3 top-3 text-pink">💳</span>
+						<div className="relative ">
+							{/* <span className="absolute left-3 top-3 text-pink">💳</span> */}
 							<input
 								{...field}
 								onChange={(e) => handleCardNumberChange(e, field.onChange)}
@@ -111,6 +111,12 @@ const PaymentForm = () => {
 								className="w-full p-2 border"
 							/>
 							{errors.cardNumber && <p className="text-red-500">{errors.cardNumber.message}</p>}
+							<Image
+								src={creditcardpink}
+								alt="PayPal Icon"
+								layout="intrinsic"
+								className="object-contain absolute left-3 top-3"
+							/>
 						</div>
 					)}
 				/>
@@ -124,17 +130,17 @@ const PaymentForm = () => {
 						</div>
 					)}
 				/>
-				<div className="flex gap-2">
+				<div className="flex gap-4">
 					<Controller
 						name="expiryDate"
 						control={control}
 						render={({field}) => (
-							<div>
+							<div className="w-fu">
 								<input
 									{...field}
 									onChange={(e) => handleExpiryDateChange(e, field.onChange)}
 									placeholder="MM/YY"
-									className="w-1/2 p-2 border"
+									className="p-2 border"
 								/>
 								{errors.expiryDate && <p className="text-red-500">{errors.expiryDate.message}</p>}
 							</div>
@@ -144,23 +150,18 @@ const PaymentForm = () => {
 						name="cvv"
 						control={control}
 						render={({field}) => (
-							<div>
+							<div className="w-fu">
 								<input
 									{...field}
 									onChange={(e) => handleCvvChange(e, field.onChange)}
 									placeholder="CVV/CVC"
-									className="w-1/2 p-2 border"
+									className="p-2 border"
 								/>
 								{errors.cvv && <p className="text-red-500">{errors.cvv.message}</p>}
 							</div>
 						)}
 					/>
 				</div>
-				<div className="relative">
-					<span className="absolute left-3 top-3 text-pink">💳</span>
-					<input placeholder="XXXX  XXXX  XXXX  XXXX" className="w-full" />
-				</div>
-
 				<button className="w-full bg-button rounded-3xl text-white font-semibold py-6">
 					SUBMIT SCURE ORDER
 				</button>
