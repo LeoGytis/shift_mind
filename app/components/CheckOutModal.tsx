@@ -24,14 +24,14 @@ const Modal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 
 	return (
 		<div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800/50">
-			<div className="relative w-full max-w-[600px] bg-white border border-greenlight rounded-3xl p-6">
+			<div className="relative w-full max-w-[600px] bg-white border border-greenlight rounded-3xl p-6 overflow-y-auto">
 				<button onClick={onClose} className="absolute top-6 right-6 cursor-pointer">
 					<Image src={union} alt="close_icon" layout="intrinsic" className="object-contain" />
 				</button>
 
 				{/* Stepper Component */}
 
-				<div className="w-full mb-6">
+				<div className="px-14 mb-16">
 					<StepperNew steps={stepsData} activeStep={2} />
 				</div>
 

@@ -58,7 +58,7 @@ const PaymentForm = () => {
 	return (
 		<div className="">
 			<div className="mb-[43px]">
-				<h3 className="mb-2">Order Summary</h3>
+				<h3 className="mb-4">Order Summary</h3>
 				<div className="flex flex-col gap-4 border border-borderlight rounded-2xl text-greendark p-4">
 					<div className="flex justify-between items-center border-b border-borderlight pb-4">
 						<span className="text-sm">Monthly Plan</span>
@@ -75,12 +75,12 @@ const PaymentForm = () => {
 				</div>
 			</div>
 			<div>
-				<h3 className="mb-2">Select Payment Method</h3>
+				<h3 className="mb-5">Select Payment Method</h3>
 				<div className="flex gap-[11px]">
-					<button className="w-1/2 flex justify-center items-center bg-[#FFC33A] rounded-3xl py-5">
+					<button className="w-1/2 flex justify-center items-center bg-[#FFC33A] rounded-3xl cursor-pointer py-5">
 						<Image src={paypal} alt="PayPal Icon" layout="intrinsic" className="object-contain" />
 					</button>
-					<button className="w-1/2 flex justify-center items-center bg-black rounded-3xl py-5">
+					<button className="w-1/2 flex justify-center items-center bg-black rounded-3xl cursor-pointer py-5">
 						<Image src={apple} alt="PayPal Icon" layout="intrinsic" className="object-contain" />
 					</button>
 				</div>
@@ -91,8 +91,8 @@ const PaymentForm = () => {
 				<div className="flex-grow border-t border-greendark"></div>
 			</div>
 			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 mb-8">
-				<div className="flex justify-between items-center">
-					<h3 className="mb-2">Credit Card</h3>
+				<div className="flex justify-between items-center mb-[14px]">
+					<h3>Credit Card</h3>
 					<Image src={creditcards} alt="creditcards_icon" layout="intrinsic" className="object-contain" />
 				</div>
 				<Controller
