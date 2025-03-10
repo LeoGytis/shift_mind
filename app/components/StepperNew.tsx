@@ -25,7 +25,7 @@ const StepperNew: React.FC<StepperNewProps> = ({steps, activeStep = 2}) => {
 							)}
 						</div>
 						<div className="absolute left-1/2 top-10 -translate-x-2/4 -translate-y-2/4">
-							<span className="text-lg font-semibold text-electric text-nowrap">{label}</span>
+							<span className="text-xs font-semibold text-greendark text-nowrap">{label}</span>
 						</div>
 					</div>
 				))}

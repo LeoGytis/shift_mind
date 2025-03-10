@@ -59,21 +59,18 @@ const PaymentForm = () => {
 		<div className="">
 			<div className="mb-[43px]">
 				<h3 className="mb-2">Order Summary</h3>
-				<div className="flex flex-col gap-2 border rounded-4xl p-4">
-					<div
-						className="flex justify-b
-								etween pb-2 border-b"
-					>
-						<span>Monthly Plan</span>
-						<span>$28.46</span>
+				<div className="flex flex-col gap-4 border border-borderlight rounded-2xl text-greendark p-4">
+					<div className="flex justify-between items-center border-b border-borderlight pb-4">
+						<span className="text-sm">Monthly Plan</span>
+						<span className="font-semibold">$28.46</span>
 					</div>
-					<div className="flex justify-between pb-2 border-b text-pink">
-						<span>Discount (50%)</span>
-						<span>-$28.46</span>
+					<div className="flex justify-between items-center border-b border-borderlight text-pink pb-4">
+						<span className="text-sm">Discount (50%)</span>
+						<span className="font-semibold">-$28.46</span>
 					</div>
-					<div className="flex justify-between pb-2 ">
-						<span>Total</span>
-						<span>$28.46</span>
+					<div className="flex justify-between items-centers">
+						<span className="font-semibold">Total</span>
+						<span className="text-2xl font-semibold">$28.46</span>
 					</div>
 				</div>
 			</div>
@@ -96,27 +93,26 @@ const PaymentForm = () => {
 			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 mb-8">
 				<div className="flex justify-between items-center">
 					<h3 className="mb-2">Credit Card</h3>
-					<Image src={creditcards} alt="PayPal Icon" layout="intrinsic" className="object-contain" />
+					<Image src={creditcards} alt="creditcards_icon" layout="intrinsic" className="object-contain" />
 				</div>
 				<Controller
 					name="cardNumber"
 					control={control}
 					render={({field}) => (
-						<div className="relative ">
-							{/* <span className="absolute left-3 top-3 text-pink">💳</span> */}
+						<div className="relative">
+							<Image
+								src={creditcardpink}
+								alt="creditcardpink_icon"
+								layout="intrinsic"
+								className="object-contain absolute left-2 top-4"
+							/>
 							<input
 								{...field}
 								onChange={(e) => handleCardNumberChange(e, field.onChange)}
 								placeholder="XXXX XXXX XXXX XXXX"
-								className="w-full p-2 border"
+								className="w-full !pl-10"
 							/>
 							{errors.cardNumber && <p className="text-red-500">{errors.cardNumber.message}</p>}
-							<Image
-								src={creditcardpink}
-								alt="PayPal Icon"
-								layout="intrinsic"
-								className="object-contain absolute left-3 top-3"
-							/>
 						</div>
 					)}
 				/>
@@ -130,17 +126,17 @@ const PaymentForm = () => {
 						</div>
 					)}
 				/>
-				<div className="flex gap-4">
+				<div className="w-full flex gap-4">
 					<Controller
 						name="expiryDate"
 						control={control}
 						render={({field}) => (
-							<div className="w-fu">
+							<div className="flex-1">
 								<input
 									{...field}
 									onChange={(e) => handleExpiryDateChange(e, field.onChange)}
 									placeholder="MM/YY"
-									className="p-2 border"
+									className="w-full"
 								/>
 								{errors.expiryDate && <p className="text-red-500">{errors.expiryDate.message}</p>}
 							</div>
@@ -150,12 +146,12 @@ const PaymentForm = () => {
 						name="cvv"
 						control={control}
 						render={({field}) => (
-							<div className="w-fu">
+							<div className="flex-1">
 								<input
 									{...field}
 									onChange={(e) => handleCvvChange(e, field.onChange)}
 									placeholder="CVV/CVC"
-									className="p-2 border"
+									className="w-full"
 								/>
 								{errors.cvv && <p className="text-red-500">{errors.cvv.message}</p>}
 							</div>

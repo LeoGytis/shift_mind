@@ -8,6 +8,7 @@
 @theme {
 	--color-electric: #0e7a82;
 	--color-pink: #f175b9;
+	--color-borderlight: #a8c6c4;
 	--color-greenlight: #1e6864;
 	--color-greendark: #0a3634;
 	--color-gradient: linear-gradient(90deg, #f175b9, #8089ff, #3df7ff);
@@ -29,7 +30,9 @@ input {
 	border: 1px solid var(--color-greenlight);
 	border-radius: 1rem;
 	background-color: #d7eeeb33;
-	padding: 1rem 2rem;
+	/* padding-left: 1rem; */
+	/* padding: 1.125rem 1rem 1.125rem 1rem; */
+	padding: 1.125rem 1rem;
 }
 
 input:focus {
