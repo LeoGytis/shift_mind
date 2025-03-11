@@ -4,9 +4,9 @@ import payment from '@/app/vectors/payment.svg';
 import sectionframe from '@/app/vectors/sectionframe.svg';
 import Image from 'next/image';
 import {useState} from 'react';
-import PlanCard from './PlanCard';
 import {dummyCardData} from './dummyCardData';
-import CheckOutModal from './checkout/CheckOutModal';
+import CheckOutModal from '../checkout/CheckOutModal';
+import PlanCard from './PlanCard';
 
 const ChooseYourPlanSection = () => {
 	const [selectedPlan, setSelectedPlan] = useState<number>(0);
