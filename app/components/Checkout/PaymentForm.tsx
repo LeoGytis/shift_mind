@@ -5,6 +5,7 @@ import visa from '@/public/vectors/visa.svg';
 import mastercardyellow from '@/public/vectors/mastercardyellow.svg';
 import discover from '@/public/vectors/discover.svg';
 import mastercardblue from '@/public/vectors/mastercardblue.svg';
+import subtract from '@/public/vectors/subtract.svg';
 import creditcards from '@/public/vectors/creditcards.svg';
 import Image from 'next/image';
 import {Controller, useForm} from 'react-hook-form';
@@ -66,11 +67,11 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 				<h3 className="mb-4">Order Summary</h3>
 				<div className="flex flex-col gap-4 border border-borderlight rounded-2xl text-greendark p-4">
 					<div className="flex justify-between items-center border-b border-borderlight pb-4">
-						<span className="text-sm">Monthly Plan</span>
+						<span className="text-sm mt-2">Monthly Plan</span>
 						<span className="font-semibold">$28.46</span>
 					</div>
-					<div className="flex justify-between items-center border-b border-borderlight text-pink pb-4">
-						<span className="text-sm">Discount (50%)</span>
+					<div className="flex justify-between items-center border-b border-borderlight text-pink text-sm mt-2 pb-4">
+						<span className="text-sm mt-2">Discount (50%)</span>
 						<span className="font-semibold">-$28.46</span>
 					</div>
 					<div className="flex justify-between items-centers">
@@ -83,20 +84,20 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 				<h3 className="mb-5">Select Payment Method</h3>
 				<div className="flex gap-[11px]">
 					<button className="w-1/2 flex justify-center items-center bg-[#FFC33A] rounded-3xl cursor-pointer py-5">
-						<Image src={paypal} alt="PayPal Icon" layout="intrinsic" className="object-contain" />
+						<Image src={paypal} alt="paypal_icon" layout="intrinsic" className="object-contain" />
 					</button>
 					<button className="w-1/2 flex justify-center items-center bg-black rounded-3xl cursor-pointer py-5">
-						<Image src={apple} alt="PayPal Icon" layout="intrinsic" className="object-contain" />
+						<Image src={apple} alt="apple_icon" layout="intrinsic" className="object-contain" />
 					</button>
 				</div>
 			</div>
 			<div className="flex items-center my-5">
 				<div className="flex-grow border-t border-greendark"></div>
-				<span className="mx-4 text-greendark">or</span>
+				<span className="text-greendark text-[17px] font-bold mx-3">or</span>
 				<div className="flex-grow border-t border-greendark"></div>
 			</div>
-			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 mb-8">
-				<div className="flex justify-between items-center mb-[14px]">
+			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3.5 mb-8">
+				<div className="flex justify-between items-center">
 					<h3>Credit Card</h3>
 					<Image src={creditcards} alt="creditcards_icon" layout="intrinsic" className="object-contain" />
 				</div>
@@ -109,7 +110,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 								src={creditcardpink}
 								alt="creditcardpink_icon"
 								layout="intrinsic"
-								className="object-contain absolute left-2 top-4"
+								className="object-contain absolute left-2 top-4.5"
 							/>
 							<input
 								{...field}
@@ -117,7 +118,17 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 								placeholder="XXXX XXXX XXXX XXXX"
 								className="w-full !pl-10"
 							/>
-							{errors.cardNumber && <p className="text-red-500">{errors.cardNumber.message}</p>}
+							{errors.cardNumber && (
+								<p className="flex gap-2 self-center text-pink text-sm mt-2">
+									<Image
+										src={subtract}
+										alt="exclamation_icon"
+										layout="intrinsic"
+										className="object-contain"
+									/>
+									{errors.cardNumber.message}
+								</p>
+							)}
 						</div>
 					)}
 				/>
@@ -127,7 +138,17 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 					render={({field}) => (
 						<div>
 							<input {...field} placeholder="Name on card" className="w-full p-2 border" />
-							{errors.nameOnCard && <p className="text-red-500">{errors.nameOnCard.message}</p>}
+							{errors.nameOnCard && (
+								<p className="flex gap-2 self-center text-pink text-sm mt-2">
+									<Image
+										src={subtract}
+										alt="exclamation_icon"
+										layout="intrinsic"
+										className="object-contain"
+									/>
+									{errors.nameOnCard.message}
+								</p>
+							)}
 						</div>
 					)}
 				/>
@@ -143,7 +164,17 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 									placeholder="MM/YY"
 									className="w-full"
 								/>
-								{errors.expiryDate && <p className="text-red-500">{errors.expiryDate.message}</p>}
+								{errors.expiryDate && (
+									<p className="flex gap-2 self-center text-pink text-sm mt-2">
+										<Image
+											src={subtract}
+											alt="exclamation_icon"
+											layout="intrinsic"
+											className="object-contain"
+										/>
+										{errors.expiryDate.message}
+									</p>
+								)}
 							</div>
 						)}
 					/>
@@ -158,14 +189,30 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 									placeholder="CVV/CVC"
 									className="w-full"
 								/>
-								{errors.cvv && <p className="text-red-500">{errors.cvv.message}</p>}
+								{errors.cvv && (
+									<p className="flex gap-2 self-center text-pink text-sm mt-2">
+										<Image
+											src={subtract}
+											alt="exclamation_icon"
+											layout="intrinsic"
+											className="object-contain"
+										/>
+										{errors.cvv.message}
+									</p>
+								)}
 							</div>
 						)}
 					/>
 				</div>
-				<button className="w-full bg-button rounded-3xl text-white font-semibold py-6">
-					SUBMIT SCURE ORDER
+				<button className="w-full background-gradient rounded-3xl text-white font-semibold cursor-pointer py-6">
+					SUBMIT SECURE ORDER
 				</button>
+				{errors.cvv && (
+					<p className="flex gap-2 self-center text-pink text-sm">
+						<Image src={subtract} alt="exclamation_icon" layout="intrinsic" className="object-contain" />
+						Oops, payment failed! Please try again.
+					</p>
+				)}
 			</form>
 			<div className="flex justify-center gap-[14px]">
 				<Image src={visa} alt="visa_icon" layout="intrinsic" className="object-contain" />

@@ -24,6 +24,7 @@ body {
 h3 {
 	font-size: 1.25rem;
 	font-weight: 600;
+	line-height: 1.5rem;
 	color: var(--color-greendark);
 }
 
@@ -31,24 +32,22 @@ input {
 	border: 1px solid var(--color-greenlight);
 	border-radius: 1rem;
 	background-color: #d7eeeb33;
-	/* padding-left: 1rem; */
-	/* padding: 1.125rem 1rem 1.125rem 1rem; */
 	padding: 1.125rem 1rem;
 }
 
 input:focus {
-	border-image: var(--gradient-main) 1;
-	border-style: solid; /* Ensure border style is applied */
-	border-radius: 1rem; /* Maintain border-radius on focus */
-	background-color: #fff;
+	border: solid 1px transparent;
+	border-radius: 1rem;
+	background-image: linear-gradient(white, white), var(--color-gradient);
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
 	outline: none;
 }
 
-.bg-button {
+.background-gradient {
 	background: var(--color-gradient);
-	cursor: pointer;
 }
 
 .active-shadow {
-	box-shadow: 0 0 15px rgba(107, 158, 255, 0.6); /* Soft shadow with blue tint */
+	box-shadow: 0 0 15px rgba(107, 158, 255, 0.6);
 }
