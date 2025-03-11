@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import Stepper from './Stepper';
-import PaymentForm from './Checkout/PaymentForm';
-import union from '@/public/vectors/union.svg';
+import union from '@/app/vectors/union.svg';
 import Image from 'next/image';
+import PaymentForm from './PaymentForm';
+import Stepper from './Stepper';
 
 interface ModalProps {
 	isOpen: boolean;

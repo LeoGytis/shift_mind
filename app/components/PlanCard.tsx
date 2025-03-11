@@ -1,6 +1,6 @@
 import React from 'react';
-import ellipse from '@/public/vectors/ellipse.svg';
-import ellipseSelected from '@/public/vectors/ellipseSelected.svg';
+import ellipse from '@/app/vectors/ellipse.svg';
+import ellipseSelected from '@/app/vectors/ellipseSelected.svg';
 import Image from 'next/image';
 
 interface PlanCardProps {

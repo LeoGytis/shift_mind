@@ -1,12 +1,12 @@
 'use client';
-import guarantee from '@/public/vectors/guarantee.svg';
-import payment from '@/public/vectors/payment.svg';
-import sectionframe from '@/public/vectors/sectionframe.svg';
+import guarantee from '@/app/vectors/guarantee.svg';
+import payment from '@/app/vectors/payment.svg';
+import sectionframe from '@/app/vectors/sectionframe.svg';
 import Image from 'next/image';
 import {useState} from 'react';
 import PlanCard from './PlanCard';
 import {dummyCardData} from './dummyCardData';
-import CheckOutModal from './CheckOutModal';
+import CheckOutModal from './checkout/CheckOutModal';
 
 const ChooseYourPlanSection = () => {
 	const [selectedPlan, setSelectedPlan] = useState<number>(0);
