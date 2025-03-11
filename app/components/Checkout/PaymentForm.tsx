@@ -41,8 +41,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 	});
 
 	const onSubmit = (data: FormValues) => {
-		// show error if submit fails
-		const simulateError = true;
+		const simulateError = false;
 		if (simulateError) {
 			setSubmitError(true);
 		} else {

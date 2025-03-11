@@ -15,9 +15,12 @@ const ChooseYourPlanSection = () => {
 	return (
 		<>
 			<section className="w-full py-1">
-				<div className="relative h-[180px]">
-					<Image src={sectionframe} alt="section_top_vector" fill className="object-cover" />
-				</div>
+				<Image
+					src={sectionframe}
+					alt="section_top_vector"
+					layout="intrinsic"
+					className="object-contain w-full -mb-1"
+				/>
 				<div className="w-full bg-[#0C3F3D] text-white py-5">
 					<div className="container mx-auto flex flex-col items-center gap-13">
 						<h1 className="text-center text-4xl font-bold">Choose Your Plan</h1>
@@ -76,8 +79,8 @@ const ChooseYourPlanSection = () => {
 					<Image
 						src={sectionframe}
 						alt="section_bottom_vector"
-						fill
-						className="object-cover transform rotate-180"
+						layout="intrinsic"
+						className="object-cover w-full transform rotate-180 -mt-1"
 					/>
 				</div>
 			</section>
