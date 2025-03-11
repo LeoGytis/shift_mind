@@ -33,11 +33,17 @@ const PlanCard: React.FC<PlanCardProps> = ({
 			}`}
 			onClick={onClick}
 		>
-			<div className="text-center text-white font-bold py-3">
-				<span className={`uppercase ${selected ? 'block' : 'invisible'}`}>{choice}</span>
-			</div>
-
-			<div className="flex justify-between bg-[#D7EEEB] rounded-[22px] py-4 px-6 cursor-pointer text-[#0A3634] transition-all">
+			{/* <div className="text-center text-white font-bold py-3 transition-all delay-1000 ease-in">
+				<span className={`uppercase ${selected ? 'block' : 'hidden'}`}>{choice}</span>
+			</div> */}
+			<span
+				className={`uppercase text-center text-white font-bold py-3 transition-all duration-500 ease-in-out ${
+					selected ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+				}`}
+			>
+				{choice}
+			</span>
+			<div className="flex justify-between bg-[#D7EEEB] rounded-[22px] py-4 px-6 cursor-pointer text-[#0A3634]">
 				<div className="flex gap-4">
 					<div className="mt-1">
 						{selected ? (

@@ -2,8 +2,8 @@ import ChooseYourPlanSection from './components/choose-plan-section/ChooseYourPl
 
 export default function Home() {
 	return (
-		<div className="min-h-scre flex items-center">
+		<>
 			<ChooseYourPlanSection />
-		</div>
+		</>
 	);
 }

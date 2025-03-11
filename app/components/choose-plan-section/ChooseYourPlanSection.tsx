@@ -21,7 +21,7 @@ const ChooseYourPlanSection = () => {
 					layout="intrinsic"
 					className="object-contain w-full -mb-1"
 				/>
-				<div className="w-full bg-[#0C3F3D] text-white py-5">
+				<div className="w-full bg-[#0C3F3D] text-white py-5 px-4">
 					<div className="container mx-auto flex flex-col items-center gap-13">
 						<h1 className="text-center text-4xl font-bold">Choose Your Plan</h1>
 
@@ -38,13 +38,13 @@ const ChooseYourPlanSection = () => {
 						</article>
 
 						{/* ----- Description Article ----- */}
-						<article className="w-1/2 flex flex-col items-center text-center">
+						<article className="w-full lg:w-1/2 flex flex-col items-center text-center">
 							<p className="text-sm mb-4">
 								By selecting a payment method, you agree to the Terms & Conditions and Privacy Policy.
 							</p>
 							<button
 								onClick={() => setIsModalOpen(true)}
-								className="w-2/3 rounded-3xl background-gradient cursor-pointer py-6 mb-8"
+								className="w-full lg:w-2/3 rounded-3xl background-gradient cursor-pointer py-6 mb-8"
 							>
 								GET MY PLAN
 							</button>
@@ -58,19 +58,28 @@ const ChooseYourPlanSection = () => {
 								subscription by contacting our customer support team via email at hello@shiftmind.app.
 								Terms of Service the charge will appear on your bill as “ShiftMind”.
 							</p>
-							<div className="flex justify-between gap-10">
+							<div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16">
 								<div className="flex gap-4">
 									<Image src={guarantee} alt="Logo" width={52} height={52} />
 									<div className="text-justify">
-										<span className="text-xl font-extrabold uppercase">RISK-FREE GUARANTEE</span>{' '}
+										<span className="text-xl font-extrabold uppercase whitespace-nowrap">
+											RISK-FREE GUARANTEE
+										</span>{' '}
+										<span className="text-sm font-medium whitespace-nowrap">cancel at</span>
+										<br />
 										<span className="text-sm font-medium">
-											cancel at any time without being charged the full price
+											any time without being charged the full price
 										</span>
 									</div>
 								</div>
-								<div className="relative w-2/3">
-									<Image src={payment} alt="payment" fill className="object-contain" />
-								</div>
+								<Image
+									src={payment}
+									alt="payment"
+									layout="intrinsic"
+									className="object-contain w-2/3 lg:w-1/3 -mb-1"
+									// fill
+									// className=" z-10 object-contain"
+								/>
 							</div>
 						</article>
 					</div>
