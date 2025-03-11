@@ -11,6 +11,7 @@ import Image from 'next/image';
 import {Controller, useForm} from 'react-hook-form';
 import {creditCardSchema} from '@/app/utils/validationSchemas';
 import {zodResolver} from '@hookform/resolvers/zod';
+import {useState} from 'react';
 
 interface FormValues {
 	cardNumber: string;
@@ -24,6 +25,7 @@ interface PaymentFormProps {
 }
 
 const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
+	const [submitError, setSubmitError] = useState(false);
 	const {
 		control,
 		handleSubmit,
@@ -39,9 +41,15 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 	});
 
 	const onSubmit = (data: FormValues) => {
-		alert('Form Submitted!');
-		console.log(data);
-		onNextStep();
+		// show error if submit fails
+		const simulateError = true;
+		if (simulateError) {
+			setSubmitError(true);
+		} else {
+			alert('Form Submitted!');
+			console.log(data);
+			onNextStep();
+		}
 	};
 
 	const handleCardNumberChange = (e: React.ChangeEvent<HTMLInputElement>, onChange: (value: string) => void) => {
@@ -65,12 +73,12 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 		<div className="">
 			<div className="mb-[43px]">
 				<h3 className="mb-4">Order Summary</h3>
-				<div className="flex flex-col gap-4 border border-borderlight rounded-2xl text-greendark p-4">
-					<div className="flex justify-between items-center border-b border-borderlight pb-4">
+				<div className="flex flex-col gap-4 border border-green-lightest rounded-2xl text-greendark p-4">
+					<div className="flex justify-between items-center border-b border-green-lightest pb-4">
 						<span className="text-sm mt-2">Monthly Plan</span>
 						<span className="font-semibold">$28.46</span>
 					</div>
-					<div className="flex justify-between items-center border-b border-borderlight text-pink text-sm mt-2 pb-4">
+					<div className="flex justify-between items-center border-b border-green-lightest text-pink text-sm mt-2 pb-4">
 						<span className="text-sm mt-2">Discount (50%)</span>
 						<span className="font-semibold">-$28.46</span>
 					</div>
@@ -207,7 +215,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 				<button className="w-full background-gradient rounded-3xl text-white font-semibold cursor-pointer py-6">
 					SUBMIT SECURE ORDER
 				</button>
-				{errors.cvv && (
+				{submitError && (
 					<p className="flex gap-2 self-center text-pink text-sm">
 						<Image src={subtract} alt="exclamation_icon" layout="intrinsic" className="object-contain" />
 						Oops, payment failed! Please try again.

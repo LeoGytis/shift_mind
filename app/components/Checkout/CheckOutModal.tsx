@@ -19,9 +19,18 @@ const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 
 	if (!isOpen) return null;
 
+	const handleBackdropClick = (e: React.MouseEvent) => {
+		if (e.target === e.currentTarget) {
+			onClose();
+		}
+	};
+
 	return (
-		<div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800/50">
-			<div className="relative w-full max-w-[600px] bg-white border border-greenlight rounded-3xl p-6 overflow-y-auto">
+		<div
+			className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800/50 overflow-y-auto pt-36 pb-8"
+			onClick={handleBackdropClick}
+		>
+			<div className="relative max-w-[600px] bg-white border border-greenlight rounded-3xl p-6">
 				<button onClick={onClose} className="absolute top-6 right-6 cursor-pointer">
 					<Image src={union} alt="close_icon" layout="intrinsic" className="object-contain" />
 				</button>
@@ -32,7 +41,7 @@ const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 
 				{currentStep === 2 && <PaymentForm onNextStep={() => setCurrentStep(3)} />}
 				{currentStep === 3 && (
-					<div className="text-center">
+					<div className="min-w-[300px] text-center">
 						<h3 className="text-lg font-semibold mb-2">Step 3: Receipt</h3>
 						<p className="text-gray-600 mb-4">Your payment was successful!</p>
 					</div>

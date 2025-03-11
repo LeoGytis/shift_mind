@@ -8,8 +8,8 @@
 @theme {
 	--color-electric: #0e7a82;
 	--color-pink: #f175b9;
-	--color-bordergrey: #ece9e3;
-	--color-borderlight: #a8c6c4;
+	--color-grey-light: #ece9e3;
+	--color-green-lightest: #a8c6c4;
 	--color-greenlight: #1e6864;
 	--color-greendark: #0a3634;
 	--color-gradient: linear-gradient(90deg, #f175b9, #8089ff, #3df7ff);
