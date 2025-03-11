@@ -13,12 +13,16 @@ import {zodResolver} from '@hookform/resolvers/zod';
 
 interface FormValues {
 	cardNumber: string;
+	nameOnCard: string;
 	expiryDate: string;
 	cvv: string;
-	nameOnCard: string;
 }
 
-const PaymentForm = () => {
+interface PaymentFormProps {
+	onNextStep: () => void;
+}
+
+const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 	const {
 		control,
 		handleSubmit,
@@ -36,6 +40,7 @@ const PaymentForm = () => {
 	const onSubmit = (data: FormValues) => {
 		alert('Form Submitted!');
 		console.log(data);
+		onNextStep();
 	};
 
 	const handleCardNumberChange = (e: React.ChangeEvent<HTMLInputElement>, onChange: (value: string) => void) => {

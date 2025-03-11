@@ -39,13 +39,13 @@ const PlanCard: React.FC<PlanCardProps> = ({
 
 			<div className="flex justify-between bg-[#D7EEEB] rounded-[22px] py-4 px-6 cursor-pointer text-[#0A3634] transition-all">
 				<div className="flex gap-4">
-					<Image src={ellipse} alt="section_top_vector" width={20} height={20} />
-					<Image src={ellipseSelected} alt="section_top_vector" width={20} height={20} />
-
-					{/* <span className="w-5 h-5 rounded-full bg-[#A8C6C4] mt-1"></span>
-					<span className="relative w-5 h-5 rounded-full bg-[#5A91FF] mt-1">
-						<span className="absolute inset-0 m-auto w-2 h-2 bg-white rounded-full "></span>
-					</span> */}
+					<div className="mt-1">
+						{selected ? (
+							<Image src={ellipseSelected} alt="section_top_vector" width={20} height={20} />
+						) : (
+							<Image src={ellipse} alt="section_top_vector" width={20} height={20} />
+						)}
+					</div>
 					<div className="flex flex-col justify-between gap-2">
 						<span className="text-xl font-bold">{title}</span>
 						<span className="text-xs">{billingCycle}</span>

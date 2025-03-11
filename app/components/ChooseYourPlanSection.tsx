@@ -7,14 +7,10 @@ import {useState} from 'react';
 import PlanCard from './PlanCard';
 import {dummyCardData} from './dummyCardData';
 import CheckOutModal from './CheckOutModal';
-import Modal from './CheckOutModal';
 
 const ChooseYourPlanSection = () => {
 	const [selectedPlan, setSelectedPlan] = useState<number>(0);
 	const [isModalOpen, setIsModalOpen] = useState(false);
-
-	const showModal = () => setIsModalOpen(true);
-	const closeModal = () => setIsModalOpen(false);
 
 	return (
 		<section className="w-full py-1">
@@ -42,7 +38,10 @@ const ChooseYourPlanSection = () => {
 						<p className="text-sm mb-4">
 							By selecting a payment method, you agree to the Terms & Conditions and Privacy Policy.
 						</p>
-						<button onClick={showModal} className="w-2/3 rounded-3xl button py-6 mb-8">
+						<button
+							onClick={() => setIsModalOpen(true)}
+							className="w-2/3 rounded-3xl bg-button cursor-pointer py-6 mb-8"
+						>
 							GET MY PLAN
 						</button>
 						<p className="text-center text-xs mb-8">
@@ -82,7 +81,7 @@ const ChooseYourPlanSection = () => {
 			</div>
 
 			{/* ----- Modal ----- */}
-			<Modal isOpen={isModalOpen} onClose={closeModal} />
+			<CheckOutModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 		</section>
 	);
 };

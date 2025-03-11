@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import StepperNew from './StepperNew';
+import Stepper from './Stepper';
 import PaymentForm from './Checkout/PaymentForm';
 import union from '@/public/vectors/union.svg';
 import Image from 'next/image';
@@ -9,16 +9,13 @@ interface ModalProps {
 	onClose: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({isOpen, onClose}) => {
-	const [currentStep, setCurrentStep] = useState(1);
-	const steps = ['Select plan', 'Payment', 'Receipt'];
-	const stepsData = [
+const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose}) => {
+	const [currentStep, setCurrentStep] = useState(2);
+	const steps = [
 		{label: 'Select plan', step: 1},
 		{label: 'Payment', step: 2},
 		{label: 'Receipt', step: 3},
 	];
-
-	const handleSubmit = () => setCurrentStep(2);
 
 	if (!isOpen) return null;
 
@@ -29,15 +26,12 @@ const Modal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 					<Image src={union} alt="close_icon" layout="intrinsic" className="object-contain" />
 				</button>
 
-				{/* Stepper Component */}
-
 				<div className="px-14 mb-16">
-					<StepperNew steps={stepsData} activeStep={2} />
+					<Stepper steps={steps} activeStep={currentStep} />
 				</div>
 
-				{/* Step Content */}
-				{currentStep === 1 && <PaymentForm />}
-				{currentStep === 2 && (
+				{currentStep === 2 && <PaymentForm onNextStep={() => setCurrentStep(3)} />}
+				{currentStep === 3 && (
 					<div className="text-center">
 						<h3 className="text-lg font-semibold mb-2">Step 3: Receipt</h3>
 						<p className="text-gray-600 mb-4">Your payment was successful!</p>
@@ -48,4 +42,4 @@ const Modal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 	);
 };
 
-export default Modal;
+export default CheckOutModal;
