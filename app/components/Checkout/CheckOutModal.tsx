@@ -27,7 +27,7 @@ const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 
 	return (
 		<div
-			className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800/50 overflow-y-auto pt-36 pb-8"
+			className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800/50 overflow-y-auto pt-8 pb-8"
 			onClick={handleBackdropClick}
 		>
 			<div className="relative max-w-[600px] bg-white border border-greenlight rounded-3xl p-6">

@@ -74,14 +74,14 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 				<h3 className="mb-4">Order Summary</h3>
 				<div className="flex flex-col gap-4 border border-green-lightest rounded-2xl text-greendark p-4">
 					<div className="flex justify-between items-center border-b border-green-lightest pb-4">
-						<span className="text-sm mt-2">Monthly Plan</span>
+						<span className="text-sm">Monthly Plan</span>
 						<span className="font-semibold">$28.46</span>
 					</div>
-					<div className="flex justify-between items-center border-b border-green-lightest text-pink text-sm mt-2 pb-4">
-						<span className="text-sm mt-2">Discount (50%)</span>
+					<div className="flex justify-between items-center border-b border-green-lightest text-pink text-sm pb-4">
+						<span className="text-sm">Discount (50%)</span>
 						<span className="font-semibold">-$28.46</span>
 					</div>
-					<div className="flex justify-between items-centers">
+					<div className="flex justify-between items-center">
 						<span className="font-semibold">Total</span>
 						<span className="text-2xl font-semibold">$28.46</span>
 					</div>
