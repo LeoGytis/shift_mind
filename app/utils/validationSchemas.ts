@@ -3,7 +3,7 @@ import {z} from 'zod';
 const currentYear = new Date().getFullYear();
 
 export const creditCardSchema = z.object({
-	cardNumber: z.string().regex(/^\d{4} \d{4} \d{4} \d{4}$/, 'Invalid credit card number format'),
+	cardNumber: z.string().regex(/^\d{4} \d{4} \d{4} \d{4}$/, 'Invalid credit card number'),
 	nameOnCard: z.string().min(1, 'Name on card is required').max(50, 'Name on card is too long'),
 	expiryDate: z
 		.string()

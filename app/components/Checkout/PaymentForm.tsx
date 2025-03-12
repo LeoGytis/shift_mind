@@ -8,10 +8,11 @@ import mastercardblue from '@/app/vectors/mastercardblue.svg';
 import subtract from '@/app/vectors/subtract.svg';
 import creditcards from '@/app/vectors/creditcards.svg';
 import Image from 'next/image';
-import {Controller, useForm} from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import {creditCardSchema} from '@/app/utils/validationSchemas';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useState} from 'react';
+import FormInput from '../FormInput';
 
 interface FormValues {
 	cardNumber: string;
@@ -26,11 +27,8 @@ interface PaymentFormProps {
 
 const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 	const [submitError, setSubmitError] = useState(false);
-	const {
-		control,
-		handleSubmit,
-		formState: {errors},
-	} = useForm<FormValues>({
+
+	const {control, handleSubmit} = useForm<FormValues>({
 		resolver: zodResolver(creditCardSchema),
 		defaultValues: {
 			cardNumber: '',
@@ -103,112 +101,41 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 				<span className="text-greendark text-[17px] font-bold mx-3">or</span>
 				<div className="flex-grow border-t border-greendark"></div>
 			</div>
+
+			{/* ----- Form ----- */}
 			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3.5 mb-8">
 				<div className="flex justify-between items-center">
 					<h3>Credit Card</h3>
 					<Image src={creditcards} alt="creditcards_icon" layout="intrinsic" className="object-contain" />
 				</div>
-				<Controller
-					name="cardNumber"
-					control={control}
-					render={({field}) => (
-						<div className="relative">
-							<Image
-								src={creditcardpink}
-								alt="creditcardpink_icon"
-								layout="intrinsic"
-								className="object-contain absolute left-2 top-4.5"
-							/>
-							<input
-								{...field}
-								onChange={(e) => handleCardNumberChange(e, field.onChange)}
-								placeholder="XXXX XXXX XXXX XXXX"
-								className="w-full !pl-10"
-							/>
-							{errors.cardNumber && (
-								<p className="flex gap-2 self-center text-pink text-sm mt-2">
-									<Image
-										src={subtract}
-										alt="exclamation_icon"
-										layout="intrinsic"
-										className="object-contain"
-									/>
-									{errors.cardNumber.message}
-								</p>
-							)}
-						</div>
-					)}
-				/>
-				<Controller
-					name="nameOnCard"
-					control={control}
-					render={({field}) => (
-						<div>
-							<input {...field} placeholder="Name on card" className="w-full p-2 border" />
-							{errors.nameOnCard && (
-								<p className="flex gap-2 self-center text-pink text-sm mt-2">
-									<Image
-										src={subtract}
-										alt="exclamation_icon"
-										layout="intrinsic"
-										className="object-contain"
-									/>
-									{errors.nameOnCard.message}
-								</p>
-							)}
-						</div>
-					)}
-				/>
-				<div className="w-full flex gap-4">
-					<Controller
-						name="expiryDate"
-						control={control}
-						render={({field}) => (
-							<div className="flex-1">
-								<input
-									{...field}
-									onChange={(e) => handleExpiryDateChange(e, field.onChange)}
-									placeholder="MM/YY"
-									className="w-full"
-								/>
-								{errors.expiryDate && (
-									<p className="flex gap-2 self-center text-pink text-sm mt-2">
-										<Image
-											src={subtract}
-											alt="exclamation_icon"
-											layout="intrinsic"
-											className="object-contain"
-										/>
-										{errors.expiryDate.message}
-									</p>
-								)}
-							</div>
-						)}
+				<div className="relative">
+					<Image
+						src={creditcardpink}
+						alt="creditcardpink_icon"
+						layout="intrinsic"
+						className="object-contain absolute left-2 top-4.5"
 					/>
-					<Controller
-						name="cvv"
+					<FormInput
+						name="cardNumber"
+						placeholder="XXXX XXXX XXXX XXXX"
+						onChange={(e, fieldOnChange) => handleCardNumberChange(e, fieldOnChange)}
 						control={control}
-						render={({field}) => (
-							<div className="flex-1">
-								<input
-									{...field}
-									onChange={(e) => handleCvvChange(e, field.onChange)}
-									placeholder="CVV/CVC"
-									className="w-full"
-								/>
-								{errors.cvv && (
-									<p className="flex gap-2 self-center text-pink text-sm mt-2">
-										<Image
-											src={subtract}
-											alt="exclamation_icon"
-											layout="intrinsic"
-											className="object-contain"
-										/>
-										{errors.cvv.message}
-									</p>
-								)}
-							</div>
-						)}
+						className="!pl-10"
+					/>
+				</div>
+				<FormInput name="nameOnCard" placeholder="Name on card" control={control} />
+				<div className="w-full flex gap-4">
+					<FormInput
+						name="expiryDate"
+						placeholder="MM/YY"
+						onChange={(e, fieldOnChange) => handleExpiryDateChange(e, fieldOnChange)}
+						control={control}
+					/>
+					<FormInput
+						name="cvv"
+						placeholder="CVV/CVC"
+						control={control}
+						onChange={(e, fieldOnChange) => handleCvvChange(e, fieldOnChange)}
 					/>
 				</div>
 				<button className="w-full background-gradient rounded-3xl text-white font-semibold cursor-pointer py-6">
