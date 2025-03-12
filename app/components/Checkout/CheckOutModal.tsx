@@ -7,9 +7,10 @@ import Stepper from './Stepper';
 interface ModalProps {
 	isOpen: boolean;
 	onClose: () => void;
+	selectedPlan: number;
 }
 
-const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose}) => {
+const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose, selectedPlan}) => {
 	const [currentStep, setCurrentStep] = useState(2);
 	const steps = [
 		{label: 'Select plan', step: 1},
@@ -51,7 +52,7 @@ const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 					<Stepper steps={steps} activeStep={currentStep} />
 				</div>
 
-				{currentStep === 2 && <PaymentForm onNextStep={() => setCurrentStep(3)} />}
+				{currentStep === 2 && <PaymentForm selectedPlan={selectedPlan} onNextStep={() => setCurrentStep(3)} />}
 				{currentStep === 3 && (
 					<div className="min-w-[300px] text-center">
 						<h3 className="text-lg font-semibold mb-2">Step 3: Receipt</h3>

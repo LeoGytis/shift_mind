@@ -13,6 +13,7 @@ import {creditCardSchema} from '@/app/utils/validationSchemas';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useState} from 'react';
 import FormInput from '../FormInput';
+import {dummyCardData} from '../choose-plan-section/dummyCardData';
 
 interface FormValues {
 	cardNumber: string;
@@ -22,11 +23,13 @@ interface FormValues {
 }
 
 interface PaymentFormProps {
+	selectedPlan: number;
 	onNextStep: () => void;
 }
 
-const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
+const PaymentForm: React.FC<PaymentFormProps> = ({selectedPlan, onNextStep}) => {
 	const [submitError, setSubmitError] = useState(false);
+	const plan = dummyCardData[selectedPlan];
 
 	const {control, handleSubmit} = useForm<FormValues>({
 		resolver: zodResolver(creditCardSchema),
@@ -72,15 +75,15 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 			<div className="flex flex-col gap-4 border border-green-lightest rounded-2xl text-greendark p-4 mb-[43px]">
 				<div className="flex justify-between items-center border-b border-green-lightest pb-4">
 					<span className="text-sm">Monthly Plan</span>
-					<span className="font-semibold">$28.46</span>
+					<span className="font-semibold">${plan.originalPrice}</span>
 				</div>
 				<div className="flex justify-between items-center border-b border-green-lightest text-pink text-sm pb-4">
 					<span className="text-sm">Discount (50%)</span>
-					<span className="font-semibold">-$28.46</span>
+					<span className="font-semibold">-${plan.discountedPrice}</span>
 				</div>
 				<div className="flex justify-between items-center">
 					<span className="font-semibold">Total</span>
-					<span className="text-2xl font-semibold">$28.46</span>
+					<span className="text-2xl font-semibold">${plan.discountedPrice}</span>
 				</div>
 			</div>
 

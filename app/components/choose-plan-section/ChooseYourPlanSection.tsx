@@ -83,7 +83,7 @@ const ChooseYourPlanSection = () => {
 				</div>
 			</section>
 
-			<CheckOutModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+			<CheckOutModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} selectedPlan={selectedPlan} />
 		</>
 	);
 };

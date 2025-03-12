@@ -53,8 +53,8 @@ const PlanCard: React.FC<PlanCardProps> = ({
 						<span className="text-xl font-bold">{title}</span>
 						<span className="text-xs">{billingCycle}</span>
 						<div className="text-xs space-x-1">
-							<span className="text-[#F175B9] line-through">{originalPrice}</span>
-							<span className="font-bold">{discountedPrice}</span>
+							<span className="text-[#F175B9] line-through">USD {originalPrice}</span>
+							<span className="font-bold">USD {discountedPrice}</span>
 						</div>
 					</div>
 				</div>
@@ -63,7 +63,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
 						<span className="align-top text-md text-sm font-semibold">USD</span>
 						<span className="text-3xl font-bold">{mainPrice}</span>
 					</div>
-					<span className="text-[#F175B9] text-xs line-through">{dailyPrice}</span>
+					<span className="text-[#F175B9] text-xs line-through">USD {dailyPrice}</span>
 				</div>
 			</div>
 		</div>
