@@ -61,23 +61,14 @@ const ChooseYourPlanSection = () => {
 							<div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16">
 								<div className="flex gap-4">
 									<Image src={guarantee} alt="Logo" width={52} height={52} />
-									<div className="text-justify">
+									<p className="max-w-[303px] text-start text-sm font-medium">
 										<span className="text-xl font-extrabold uppercase whitespace-nowrap">
 											RISK-FREE GUARANTEE
 										</span>{' '}
-										<span className="text-sm font-medium whitespace-nowrap">cancel at</span>
-										<br />
-										<span className="text-sm font-medium">
-											any time without being charged the full price
-										</span>
-									</div>
+										cancel at any time without being charged the full price
+									</p>
 								</div>
-								<Image
-									src={payment}
-									alt="payment"
-									layout="intrinsic"
-									className="object-contain w-2/3 lg:w-1/3 -mb-1"
-								/>
+								<Image src={payment} alt="payment" layout="intrinsic" className="object-contain" />
 							</div>
 						</article>
 					</div>
