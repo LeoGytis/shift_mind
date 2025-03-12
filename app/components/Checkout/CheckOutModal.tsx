@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import union from '@/app/vectors/union.svg';
 import Image from 'next/image';
 import PaymentForm from './PaymentForm';
@@ -17,6 +17,18 @@ const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 		{label: 'Receipt', step: 3},
 	];
 
+	useEffect(() => {
+		if (isOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
+		}
+
+		return () => {
+			document.body.style.overflow = 'auto';
+		};
+	}, [isOpen]);
+
 	if (!isOpen) return null;
 
 	const handleBackdropClick = (e: React.MouseEvent) => {
@@ -27,7 +39,7 @@ const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 
 	return (
 		<div
-			className="fixed inset-0 z-50 flex justify-center items-start lg:items-center bg-gray-800/50 overflow-y-auto py-8"
+			className="fixed inset-0 z-50 flex w-full h-full justify-center items-start lg:items-center bg-gray-800/80 overflow-y-auto"
 			onClick={handleBackdropClick}
 		>
 			<div className="relative max-w-[600px] bg-white border border-greenlight rounded-3xl p-6 pb-10">

@@ -26,7 +26,7 @@ const ChooseYourPlanSection = () => {
 						<h1 className="text-center text-4xl font-bold">Choose Your Plan</h1>
 
 						{/* ----- Plans Article ----- */}
-						<article className="w-full flex flex-col lg:flex-row justify-center items-center gap-4">
+						<article className="w-full flex flex-col lg:flex-row justify-center items-center lg:items-end gap-4">
 							{dummyCardData.map((plan, index) => (
 								<PlanCard
 									key={index}

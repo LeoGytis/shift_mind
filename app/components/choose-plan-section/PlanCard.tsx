@@ -11,7 +11,7 @@ interface PlanCardProps {
 	mainPrice: string;
 	dailyPrice: string;
 	selected: boolean;
-	choice: string;
+	topChoice?: boolean;
 	onClick: () => void;
 }
 
@@ -23,24 +23,24 @@ const PlanCard: React.FC<PlanCardProps> = ({
 	mainPrice,
 	dailyPrice,
 	selected,
-	choice,
+	topChoice = false,
 	onClick,
 }) => {
 	return (
 		<div
-			className={`relative lg:w-1/3 flex flex-col bg-[#5A91FF] rounded-3xl border-2 border-transparent  ${
-				selected ? 'border-[#6B9EFF] active-shadow' : 'bg-transparent'
+			className={`relative w-full md:w-1/2 lg:w-1/3 flex flex-col bg-[#5A91FF] rounded-3xl border-2 border-transparent  ${
+				selected && 'border-[#6B9EFF] active-shadow'
 			}`}
 			onClick={onClick}
 		>
 			<span
-				className={`uppercase text-center text-white font-bold py-3 transition-all duration-500 ease-in-out ${
-					selected ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+				className={`flex justify-center uppercase text-center text-white font-bold py-3 ${
+					!topChoice && 'hidden'
 				}`}
 			>
-				{choice}
+				Top choice for beginners
 			</span>
-			<div className="flex justify-between bg-[#D7EEEB] rounded-[22px] py-4 px-6 cursor-pointer text-[#0A3634]">
+			<div className="flex justify-between bg-[#D7EEEB] rounded-[22px] cursor-pointer text-[#0A3634] py-4 px-6">
 				<div className="flex gap-4">
 					<div className="mt-1">
 						{selected ? (
