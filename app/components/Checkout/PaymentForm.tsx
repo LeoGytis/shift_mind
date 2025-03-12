@@ -68,34 +68,32 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 
 	return (
 		<>
-			<div className="mb-[43px]">
-				<h3 className="mb-4">Order Summary</h3>
-				<div className="flex flex-col gap-4 border border-green-lightest rounded-2xl text-greendark p-4">
-					<div className="flex justify-between items-center border-b border-green-lightest pb-4">
-						<span className="text-sm">Monthly Plan</span>
-						<span className="font-semibold">$28.46</span>
-					</div>
-					<div className="flex justify-between items-center border-b border-green-lightest text-pink text-sm pb-4">
-						<span className="text-sm">Discount (50%)</span>
-						<span className="font-semibold">-$28.46</span>
-					</div>
-					<div className="flex justify-between items-center">
-						<span className="font-semibold">Total</span>
-						<span className="text-2xl font-semibold">$28.46</span>
-					</div>
+			<h3 className="mb-4">Order Summary</h3>
+			<div className="flex flex-col gap-4 border border-green-lightest rounded-2xl text-greendark p-4 mb-[43px]">
+				<div className="flex justify-between items-center border-b border-green-lightest pb-4">
+					<span className="text-sm">Monthly Plan</span>
+					<span className="font-semibold">$28.46</span>
+				</div>
+				<div className="flex justify-between items-center border-b border-green-lightest text-pink text-sm pb-4">
+					<span className="text-sm">Discount (50%)</span>
+					<span className="font-semibold">-$28.46</span>
+				</div>
+				<div className="flex justify-between items-center">
+					<span className="font-semibold">Total</span>
+					<span className="text-2xl font-semibold">$28.46</span>
 				</div>
 			</div>
-			<div>
-				<h3 className="mb-5">Select Payment Method</h3>
-				<div className="flex gap-[11px]">
-					<button className="w-1/2 flex justify-center items-center bg-[#FFC33A] rounded-3xl cursor-pointer py-5">
-						<Image src={paypal} alt="paypal_icon" layout="intrinsic" className="object-contain" />
-					</button>
-					<button className="w-1/2 flex justify-center items-center bg-black rounded-3xl cursor-pointer py-5">
-						<Image src={apple} alt="apple_icon" layout="intrinsic" className="object-contain" />
-					</button>
-				</div>
+
+			<h3 className="mb-5">Select Payment Method</h3>
+			<div className="flex gap-[11px]">
+				<button className="w-1/2 flex justify-center items-center bg-[#FFC33A] rounded-3xl cursor-pointer py-5">
+					<Image src={paypal} alt="paypal_icon" layout="intrinsic" className="object-contain" />
+				</button>
+				<button className="w-1/2 flex justify-center items-center bg-black rounded-3xl cursor-pointer py-5">
+					<Image src={apple} alt="apple_icon" layout="intrinsic" className="object-contain" />
+				</button>
 			</div>
+
 			<div className="flex items-center my-5">
 				<div className="flex-grow border-t border-greendark"></div>
 				<span className="text-greendark text-[17px] font-bold mx-3">or</span>
@@ -148,6 +146,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 					</p>
 				)}
 			</form>
+
 			<div className="flex justify-center gap-3.5">
 				<Image src={visa} alt="visa_icon" layout="intrinsic" className="object-contain" />
 				<Image

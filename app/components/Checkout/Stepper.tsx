@@ -8,7 +8,7 @@ const Stepper: React.FC<StepperProps> = ({steps, activeStep}) => {
 	const width = `${(100 / (totalSteps - 1)) * (activeStep - 1)}%`;
 
 	return (
-		<div className="before:transform-y-1/2 relative mt-6 flex justify-between before:absolute before:left-0 before:top-[6px] before:h-[3px] before:w-full before:bg-grey-light">
+		<div className="before:transform-y-1/2 relative flex justify-between before:absolute before:left-0 before:top-[6px] before:h-[3px] before:w-full before:bg-grey-light mt-6 pb-8">
 			{steps.map(({step, label}) => (
 				<div className="relative z-10" key={step}>
 					<div

@@ -35,7 +35,7 @@ const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 					<Image src={union} alt="close_icon" layout="intrinsic" className="object-contain" />
 				</button>
 
-				<div className="px-6 lg:px-14 mb-16">
+				<div className="px-8 lg:px-14 mb-[43px]">
 					<Stepper steps={steps} activeStep={currentStep} />
 				</div>
 
