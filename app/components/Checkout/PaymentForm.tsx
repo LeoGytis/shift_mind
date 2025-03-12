@@ -67,7 +67,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 	};
 
 	return (
-		<div className="">
+		<>
 			<div className="mb-[43px]">
 				<h3 className="mb-4">Order Summary</h3>
 				<div className="flex flex-col gap-4 border border-green-lightest rounded-2xl text-greendark p-4">
@@ -138,7 +138,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 						onChange={(e, fieldOnChange) => handleCvvChange(e, fieldOnChange)}
 					/>
 				</div>
-				<button className="w-full background-gradient rounded-3xl text-white font-semibold cursor-pointer py-6">
+				<button className="w-full background-gradient rounded-3xl text-white font-semibold cursor-pointer py-6 mt-4">
 					SUBMIT SECURE ORDER
 				</button>
 				{submitError && (
@@ -148,7 +148,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 					</p>
 				)}
 			</form>
-			<div className="flex justify-center gap-[14px]">
+			<div className="flex justify-center gap-3.5">
 				<Image src={visa} alt="visa_icon" layout="intrinsic" className="object-contain" />
 				<Image
 					src={mastercardyellow}
@@ -159,7 +159,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({onNextStep}) => {
 				<Image src={discover} alt="discover_icon" layout="intrinsic" className="object-contain" />
 				<Image src={mastercardblue} alt="mastercardblue_icon" layout="intrinsic" className="object-contain" />
 			</div>
-		</div>
+		</>
 	);
 };
 

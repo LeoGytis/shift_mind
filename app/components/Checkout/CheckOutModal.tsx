@@ -27,10 +27,10 @@ const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose}) => {
 
 	return (
 		<div
-			className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800/50 overflow-y-auto pt-8 pb-8"
+			className="fixed inset-0 z-50 flex justify-center items-start lg:items-center bg-gray-800/50 overflow-y-auto py-8"
 			onClick={handleBackdropClick}
 		>
-			<div className="relative max-w-[600px] bg-white border border-greenlight rounded-3xl p-6">
+			<div className="relative max-w-[600px] bg-white border border-greenlight rounded-3xl p-6 pb-10">
 				<button onClick={onClose} className="absolute top-6 right-6 cursor-pointer">
 					<Image src={union} alt="close_icon" layout="intrinsic" className="object-contain" />
 				</button>

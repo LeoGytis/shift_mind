@@ -33,7 +33,7 @@ const FormInput = <T extends FieldValues>({
 						type={type}
 						value={field.value || ''}
 						placeholder={placeholder}
-						className={`w-full ${className || ''}`}
+						className={`w-full ${className || ''} ${fieldState?.error?.message && '!border-pink'}`}
 						onChange={(e) => {
 							field.onChange(e);
 							if (onChange) {

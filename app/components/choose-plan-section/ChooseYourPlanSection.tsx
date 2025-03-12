@@ -77,8 +77,6 @@ const ChooseYourPlanSection = () => {
 									alt="payment"
 									layout="intrinsic"
 									className="object-contain w-2/3 lg:w-1/3 -mb-1"
-									// fill
-									// className=" z-10 object-contain"
 								/>
 							</div>
 						</article>

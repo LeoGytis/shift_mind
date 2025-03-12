@@ -45,6 +45,10 @@ input:focus {
 	outline: none;
 }
 
+input::placeholder {
+	color: var(--color-green-lightest);
+}
+
 .background-gradient {
 	background: var(--color-gradient);
 }
