@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import subtract from '@/app/vectors/subtract.svg';
+import Image from 'next/image';
 import {Control, Controller, FieldValues, Path, PathValue} from 'react-hook-form';
 
 interface FormInputProps<T extends FieldValues> {
@@ -33,7 +33,9 @@ const FormInput = <T extends FieldValues>({
 						type={type}
 						value={field.value || ''}
 						placeholder={placeholder}
-						className={`w-full ${className || ''} ${fieldState?.error?.message && '!border-pink'}`}
+						className={`w-full bg-bgligth/20 border border-greenlight rounded-2xl placeholder:text-green-lightest py-4.5 px-4 ${
+							className || ''
+						} ${fieldState?.error?.message && '!border-pink'}`}
 						onChange={(e) => {
 							field.onChange(e);
 							if (onChange) {

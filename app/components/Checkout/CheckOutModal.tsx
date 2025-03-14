@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
 import union from '@/app/vectors/union.svg';
 import Image from 'next/image';
+import React, {useEffect, useState} from 'react';
 import PaymentForm from './PaymentForm';
 import Stepper from './Stepper';
 
@@ -12,7 +12,7 @@ interface ModalProps {
 
 const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose, selectedPlan}) => {
 	const [currentStep, setCurrentStep] = useState(2);
-	const steps = [
+	const checkoutSteps = [
 		{label: 'Select plan', step: 1},
 		{label: 'Payment', step: 2},
 		{label: 'Receipt', step: 3},
@@ -40,16 +40,16 @@ const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose, selectedPlan}) =>
 
 	return (
 		<div
-			className="fixed inset-0 z-50 flex w-full h-full justify-center items-start lg:items-center bg-gray-800/80 overflow-y-auto"
+			className="fixed inset-0 z-50 flex justify-center items-start bg-gray-800/80 overflow-y-auto"
 			onClick={handleBackdropClick}
 		>
-			<div className="relative max-w-[600px] bg-white border border-greenlight rounded-3xl p-6 pb-10">
+			<div className="relative max-w-[600px] bg-white border border-greenlight rounded-3xl p-6 pb-10 lg:my-4">
 				<button onClick={onClose} className="absolute top-6 right-6 cursor-pointer">
 					<Image src={union} alt="close_icon" layout="intrinsic" className="object-contain" />
 				</button>
 
 				<div className="px-8 lg:px-14 mb-[43px]">
-					<Stepper steps={steps} activeStep={currentStep} />
+					<Stepper steps={checkoutSteps} activeStep={currentStep} />
 				</div>
 
 				{currentStep === 2 && <PaymentForm selectedPlan={selectedPlan} onNextStep={() => setCurrentStep(3)} />}

@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import sectionframetop from '@/app/vectors/sectionframetop.svg';
 import shiftmind from '@/app/vectors/shiftmind.svg';
+import Image from 'next/image';
 
 const TopBar = () => {
 	return (
-		<>
+		<nav className="mb-8">
 			<div className="relative h-24 lg:h-4 bg-greenlight">
 				<Image
 					src={shiftmind}
@@ -20,7 +20,7 @@ const TopBar = () => {
 				layout="intrinsic"
 				className="object-contain w-full -mt-1"
 			/>
-		</>
+		</nav>
 	);
 };
 

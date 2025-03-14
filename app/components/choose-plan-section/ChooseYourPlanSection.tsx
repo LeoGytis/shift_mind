@@ -4,8 +4,8 @@ import payment from '@/app/vectors/payment.svg';
 import sectionframe from '@/app/vectors/sectionframe.svg';
 import Image from 'next/image';
 import {useState} from 'react';
-import {dummyCardData} from './dummyCardData';
 import CheckOutModal from '../checkout/CheckOutModal';
+import {dummyCardData} from './dummyCardData';
 import PlanCard from './PlanCard';
 
 const ChooseYourPlanSection = () => {
@@ -21,7 +21,7 @@ const ChooseYourPlanSection = () => {
 					layout="intrinsic"
 					className="object-contain w-full -mb-1"
 				/>
-				<div className="w-full bg-[#0C3F3D] text-white py-5 px-4">
+				<div className="w-full bg-bggreen text-white py-5 px-4">
 					<div className="container mx-auto flex flex-col items-center gap-13">
 						<h1 className="text-center text-4xl font-bold">Choose Your Plan</h1>
 

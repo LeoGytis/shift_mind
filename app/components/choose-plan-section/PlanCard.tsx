@@ -1,7 +1,7 @@
-import React from 'react';
 import ellipse from '@/app/vectors/ellipse.svg';
 import ellipseSelected from '@/app/vectors/ellipseSelected.svg';
 import Image from 'next/image';
+import React from 'react';
 
 interface PlanCardProps {
 	title: string;
@@ -28,8 +28,8 @@ const PlanCard: React.FC<PlanCardProps> = ({
 }) => {
 	return (
 		<div
-			className={`relative w-full md:w-1/2 lg:w-1/3 flex flex-col bg-[#5A91FF] rounded-3xl border-2 border-transparent  ${
-				selected && 'border-[#6B9EFF] active-shadow'
+			className={`relative w-full md:w-1/2 lg:w-1/3 flex flex-col bg-bgblue rounded-3xl border-2 border-transparent  ${
+				selected && 'border-blue active-shadow'
 			}`}
 			onClick={onClick}
 		>
@@ -40,7 +40,11 @@ const PlanCard: React.FC<PlanCardProps> = ({
 			>
 				Top choice for beginners
 			</span>
-			<div className="flex justify-between bg-[#D7EEEB] rounded-[22px] cursor-pointer text-[#0A3634] py-4 px-6">
+			<div
+				className={`flex justify-between bg-bgligth rounded-3xl cursor-pointer text-greendark py-4 px-6 ${
+					selected && 'bg-white'
+				}`}
+			>
 				<div className="flex gap-4">
 					<div className="mt-1">
 						{selected ? (
@@ -53,7 +57,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
 						<span className="text-xl font-bold">{title}</span>
 						<span className="text-xs">{billingCycle}</span>
 						<div className="text-xs space-x-1">
-							<span className="text-[#F175B9] line-through">USD {originalPrice}</span>
+							<span className="text-pink line-through">USD {originalPrice}</span>
 							<span className="font-bold">USD {discountedPrice}</span>
 						</div>
 					</div>
@@ -63,7 +67,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
 						<span className="align-top text-md text-sm font-semibold">USD</span>
 						<span className="text-3xl font-bold">{mainPrice}</span>
 					</div>
-					<span className="text-[#F175B9] text-xs line-through">USD {dailyPrice}</span>
+					<span className="text-pink text-xs line-through">USD {dailyPrice}</span>
 				</div>
 			</div>
 		</div>

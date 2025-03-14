@@ -1,17 +1,17 @@
-import paypal from '@/app/vectors/paypal.svg';
+import {creditCardSchema} from '@/app/utils/validationSchemas';
 import apple from '@/app/vectors/apple.svg';
 import creditcardpink from '@/app/vectors/creditcardpink.svg';
-import visa from '@/app/vectors/visa.svg';
-import mastercardyellow from '@/app/vectors/mastercardyellow.svg';
+import creditcards from '@/app/vectors/creditcards.svg';
 import discover from '@/app/vectors/discover.svg';
 import mastercardblue from '@/app/vectors/mastercardblue.svg';
+import mastercardyellow from '@/app/vectors/mastercardyellow.svg';
+import paypal from '@/app/vectors/paypal.svg';
 import subtract from '@/app/vectors/subtract.svg';
-import creditcards from '@/app/vectors/creditcards.svg';
-import Image from 'next/image';
-import {useForm} from 'react-hook-form';
-import {creditCardSchema} from '@/app/utils/validationSchemas';
+import visa from '@/app/vectors/visa.svg';
 import {zodResolver} from '@hookform/resolvers/zod';
+import Image from 'next/image';
 import {useState} from 'react';
+import {useForm} from 'react-hook-form';
 import FormInput from '../FormInput';
 import {dummyCardData} from '../choose-plan-section/dummyCardData';
 
@@ -74,7 +74,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({selectedPlan, onNextStep}) => 
 			<h3 className="mb-4">Order Summary</h3>
 			<div className="flex flex-col gap-4 border border-green-lightest rounded-2xl text-greendark p-4 mb-[43px]">
 				<div className="flex justify-between items-center border-b border-green-lightest pb-4">
-					<span className="text-sm">Monthly Plan</span>
+					<span className="text-sm">{plan.title}</span>
 					<span className="font-semibold">${plan.originalPrice}</span>
 				</div>
 				<div className="flex justify-between items-center border-b border-green-lightest text-pink text-sm pb-4">
@@ -89,7 +89,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({selectedPlan, onNextStep}) => 
 
 			<h3 className="mb-5">Select Payment Method</h3>
 			<div className="flex gap-[11px]">
-				<button className="w-1/2 flex justify-center items-center bg-[#FFC33A] rounded-3xl cursor-pointer py-5">
+				<button className="w-1/2 flex justify-center items-center bg-bgyellow rounded-3xl cursor-pointer py-5">
 					<Image src={paypal} alt="paypal_icon" layout="intrinsic" className="object-contain" />
 				</button>
 				<button className="w-1/2 flex justify-center items-center bg-black rounded-3xl cursor-pointer py-5">
