@@ -2,7 +2,7 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
 	output: 'export',
-	// distDir: 'out',
+	distDir: 'out',
 	basePath: '/shift_mind',
 	// assetPrefix: '/shift_mind',
 	assetPrefix: './',
