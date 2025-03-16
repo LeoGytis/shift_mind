@@ -1,12 +1,13 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
+	reactStrictMode: true,
 	images: {
-		unoptimized: true,
+		unoptimized: true, // Disable default image optimization
 	},
+	assetPrefix: '/shift_mind/',
+	basePath: '/shift_mind/',
 	output: 'export',
-	distDir: 'out',
-	basePath: '/shift_mind',
 };
 
 export default nextConfig;
