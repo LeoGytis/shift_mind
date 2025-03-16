@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
 	// distDir: 'out',
 	basePath: '/shift_mind',
 	// assetPrefix: '/shift_mind',
+	assetPrefix: './',
 	images: {
 		unoptimized: true,
 	},
