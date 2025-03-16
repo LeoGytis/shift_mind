@@ -4,7 +4,7 @@ import payment from '@/app/vectors/payment.svg';
 import sectionframe from '@/app/vectors/sectionframe.svg';
 import Image from 'next/image';
 import {useState} from 'react';
-import CheckOutModal from '../checkout/CheckOutModal';
+import Modal from '../checkout/Modal';
 import {dummyCardData} from './dummyCardData';
 import PlanCard from './PlanCard';
 
@@ -83,7 +83,7 @@ const ChooseYourPlanSection = () => {
 				</div>
 			</section>
 
-			<CheckOutModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} selectedPlan={selectedPlan} />
+			<Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} selectedPlan={selectedPlan} />
 		</>
 	);
 };

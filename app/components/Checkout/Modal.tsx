@@ -10,7 +10,7 @@ interface ModalProps {
 	selectedPlan: number;
 }
 
-const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose, selectedPlan}) => {
+const Modal: React.FC<ModalProps> = ({isOpen, onClose, selectedPlan}) => {
 	const [currentStep, setCurrentStep] = useState(2);
 	const checkoutSteps = [
 		{label: 'Select plan', step: 1},
@@ -64,4 +64,4 @@ const CheckOutModal: React.FC<ModalProps> = ({isOpen, onClose, selectedPlan}) =>
 	);
 };
 
-export default CheckOutModal;
+export default Modal;
