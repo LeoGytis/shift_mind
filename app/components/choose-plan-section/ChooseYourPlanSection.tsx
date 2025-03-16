@@ -1,10 +1,10 @@
 'use client';
+import CheckOutModal from '@/app/components/checkout/CheckOutModal';
 import guarantee from '@/app/vectors/guarantee.svg';
 import payment from '@/app/vectors/payment.svg';
 import sectionframe from '@/app/vectors/sectionframe.svg';
 import Image from 'next/image';
 import {useState} from 'react';
-import CheckOutModal from '../checkout/CheckOutModal';
 import {dummyCardData} from './dummyCardData';
 import PlanCard from './PlanCard';
 
