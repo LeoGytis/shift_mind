@@ -4,12 +4,13 @@ import payment from '@/app/vectors/payment.svg';
 import sectionframe from '@/app/vectors/sectionframe.svg';
 import Image from 'next/image';
 import {useState} from 'react';
+import Modal from '../checkout/Modal';
 import {dummyCardData} from './dummyCardData';
 import PlanCard from './PlanCard';
 
 const ChooseYourPlanSection = () => {
 	const [selectedPlan, setSelectedPlan] = useState<number>(0);
-	// const [isModalOpen, setIsModalOpen] = useState(false);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	return (
 		<>
@@ -42,7 +43,7 @@ const ChooseYourPlanSection = () => {
 								By selecting a payment method, you agree to the Terms & Conditions and Privacy Policy.
 							</p>
 							<button
-								// onClick={() => setIsModalOpen(true)}
+								onClick={() => setIsModalOpen(true)}
 								className="w-full lg:w-2/3 rounded-3xl background-gradient cursor-pointer py-6 mb-8"
 							>
 								GET MY PLAN
@@ -82,7 +83,7 @@ const ChooseYourPlanSection = () => {
 				</div>
 			</section>
 
-			{/* <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} selectedPlan={selectedPlan} /> */}
+			<Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} selectedPlan={selectedPlan} />
 		</>
 	);
 };
