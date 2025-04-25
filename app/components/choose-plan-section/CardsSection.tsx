@@ -12,43 +12,6 @@ interface CardProps {
   list: string[];
 }
 
-const Card: FC<CardProps> = ({ image, colorCode, title, list }) => {
-  return (
-    <div className="card-shadow hover-card-shadow group mb-12 w-full rounded-3xl transition-all duration-300 hover:bg-white md:w-[410px] lg:p-0">
-      <div className="flex w-full flex-col gap-6">
-        <div className="h-full overflow-hidden rounded-t-3xl">
-          <Image
-            src={image.src}
-            alt={image.alt}
-            width={400}
-            height={293}
-            className="h-[293px] w-full transform object-cover duration-700 ease-out hover:scale-110"
-          />
-        </div>
-        <div className="flex flex-col p-6">
-          <h2 style={{ color: colorCode }} className="mb-8 text-2xl font-bold">
-            {title}
-          </h2>
-          <ul className="space-y-5">
-            {list.map((item, index) => (
-              <li
-                key={index}
-                className="flex items-center gap-4 transition-transform duration-300 group-hover:translate-x-2"
-              >
-                <span
-                  style={{ backgroundColor: colorCode }}
-                  className="h-2.5 w-2.5 rounded-full"
-                ></span>
-                <span className="text-lg text-gray-700">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const CardOne: CardProps = {
   image: {
     src: "/images/procrastination.jpg",
@@ -81,20 +44,54 @@ const CardTwo: CardProps = {
   ],
 };
 
+const Card: FC<CardProps> = ({ image, colorCode, title, list }) => {
+  return (
+    <div className="card-shadow hover-card-shadow group w-full rounded-3xl bg-white transition-all duration-300 md:w-full lg:p-0">
+      <div className="flex w-full flex-col gap-6">
+        <div className="h-full overflow-hidden rounded-t-3xl">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={400}
+            height={293}
+            className="h-[293px] w-full transform object-cover duration-700 ease-out hover:scale-110"
+          />
+        </div>
+        <div className="flex flex-col p-6">
+          <h2 style={{ color: colorCode }} className="mb-8 text-2xl font-bold">
+            {title}
+          </h2>
+          <ul className="space-y-5">
+            {list.map((item, index) => (
+              <li key={index} className="flex items-center gap-4">
+                <span
+                  style={{ backgroundColor: colorCode }}
+                  className="h-2.5 w-2.5 rounded-full"
+                ></span>
+                <span className="text-lg text-gray-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const CardsSection: FC = () => {
   return (
-    <section className="w-full bg-[#f8fafc] px-4 py-16 md:px-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-stretch justify-between gap-8 md:flex-row md:gap-16">
+    <section className="w-full px-4 py-16 md:px-8">
+      <div className="container mx-auto flex max-w-4xl flex-col justify-between gap-8 md:flex-row md:gap-9">
         <Card {...CardOne} />
 
         {/* Arrow Section */}
-        <div className="flex items-center justify-center gap-3 md:flex-col">
+        <div className="flex items-center justify-center">
           <Image
             src={arrows}
             alt="arrows"
-            width={50}
-            height={50}
-            className="h-[293px] w-full transform object-cover duration-700 ease-out hover:scale-110"
+            width={76}
+            height={82}
+            className="rotate-90 object-cover md:rotate-0"
           />
         </div>
 

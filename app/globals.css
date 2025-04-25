@@ -1,69 +1,70 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+  /* --background: #ffffff; */
+  --background: #d9d9d9;
+  --foreground: #171717;
 }
 
 @theme {
-	--color-bgligth: #d7eeeb;
-	--color-bggreen: #0c3f3d;
-	--color-bgyellow: #ffc33a;
-	--color-bgblue: #5a91ff;
-	--color-electric: #0e7a82;
-	--color-blue: #6b9eff;
-	--color-pink: #f175b9;
-	--color-grey-light: #ece9e3;
-	--color-green-lightest: #a8c6c4;
-	--color-greenlight: #1e6864;
-	--color-greendark: #0a3634;
-	--color-gradient: linear-gradient(90deg, #f175b9, #8089ff, #3df7ff);
+  --color-bgligth: #d7eeeb;
+  --color-bggreen: #0c3f3d;
+  --color-bgyellow: #ffc33a;
+  --color-bgblue: #5a91ff;
+  --color-electric: #0e7a82;
+  --color-blue: #6b9eff;
+  --color-pink: #f175b9;
+  --color-grey-light: #ece9e3;
+  --color-green-lightest: #a8c6c4;
+  --color-greenlight: #1e6864;
+  --color-greendark: #0a3634;
+  --color-gradient: linear-gradient(90deg, #f175b9, #8089ff, #3df7ff);
 }
 
 body {
-	color: var(--foreground);
-	background: var(--background);
-	font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
 h3 {
-	font-size: 1.25rem;
-	font-weight: 600;
-	line-height: 1.5rem;
-	color: var(--color-greendark);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: var(--color-greendark);
 }
 
 input:focus {
-	border: solid 1px transparent;
-	border-radius: 1rem;
-	background-image: linear-gradient(white, white), var(--color-gradient);
-	background-origin: border-box;
-	background-clip: padding-box, border-box;
-	outline: none;
+  border: solid 1px transparent;
+  border-radius: 1rem;
+  background-image: linear-gradient(white, white), var(--color-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  outline: none;
 }
 
 .background-gradient {
-	background: var(--color-gradient);
+  background: var(--color-gradient);
 }
 
 .active-shadow {
-	box-shadow: 0 0 15px rgba(107, 158, 255, 0.6);
+  box-shadow: 0 0 15px rgba(107, 158, 255, 0.6);
 }
 
 .card-shadow {
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .hover-card-shadow:hover {
-	box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-	transform: translateY(-2px);
-	transition: all 0.3s ease;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
 .gradient-border {
-	background-image: linear-gradient(white, white), var(--color-gradient);
-	background-origin: border-box;
-	background-clip: padding-box, border-box;
-	border: 2px solid transparent;
-	border-radius: 1.5rem;
+  background-image: linear-gradient(white, white), var(--color-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 2px solid transparent;
+  border-radius: 1.5rem;
 }
