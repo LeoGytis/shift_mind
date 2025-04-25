@@ -27,6 +27,13 @@ body {
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 44px;
+  color: var(--color-greendark);
+}
+
 h3 {
   font-size: 1.25rem;
   font-weight: 600;
