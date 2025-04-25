@@ -49,3 +49,21 @@ input:focus {
 .active-shadow {
 	box-shadow: 0 0 15px rgba(107, 158, 255, 0.6);
 }
+
+.card-shadow {
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hover-card-shadow:hover {
+	box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+	transform: translateY(-2px);
+	transition: all 0.3s ease;
+}
+
+.gradient-border {
+	background-image: linear-gradient(white, white), var(--color-gradient);
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	border: 2px solid transparent;
+	border-radius: 1.5rem;
+}
