@@ -1,5 +1,6 @@
 import TopBar from "./components/layout/TopBar";
 import SectionChooseYourPlan from "./components/sections/section-choose-your-plan/SectionChooseYourPlan";
+import SectionEighthPromise from "./components/sections/SectionEighthPromise";
 import SectionFivePlan from "./components/sections/SectionFivePlan";
 import SectionFourHero from "./components/sections/SectionFourHero";
 import SectionSixPeople from "./components/sections/SectionSixPeople";
@@ -17,6 +18,7 @@ export default function Home() {
       <SectionFivePlan />
       <SectionSixPeople />
       <SectionChooseYourPlan />
+      <SectionEighthPromise />
     </div>
   );
 }
