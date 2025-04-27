@@ -1,4 +1,7 @@
 "use client";
+import { cn } from "@/app/utils/cn";
+import arrow from "@/app/vectors/arrow.svg";
+import Image from "next/image";
 import { FC, useState } from "react";
 
 interface AccordionItem {
@@ -22,10 +25,13 @@ const Accordion: FC<AccordionProps> = ({ items }) => {
       {items.map((item, idx) => (
         <div
           key={idx}
-          className="overflow-hidden rounded-2xl bg-white shadow-md"
+          className={cn(
+            "overflow-hidden rounded-2xl bg-white transition-all duration-300",
+            openIndex === idx && "border-rainbow",
+          )}
         >
           <button
-            className={`flex w-full items-center justify-between px-6 py-5 text-left text-lg font-semibold transition-colors focus:outline-none ${openIndex === idx ? "text-primary" : "text-greendark"}`}
+            className={`flex w-full cursor-pointer items-center justify-between px-6 py-5 text-left text-lg font-semibold transition-colors focus:outline-none ${openIndex === idx ? "text-primary" : "text-greendark"}`}
             onClick={() => handleToggle(idx)}
             aria-expanded={openIndex === idx}
             aria-controls={`accordion-content-${idx}`}
@@ -35,7 +41,7 @@ const Accordion: FC<AccordionProps> = ({ items }) => {
             <span
               className={`transform transition-transform ${openIndex === idx ? "rotate-180" : ""}`}
             >
-              ▼
+              <Image src={arrow} alt="arrow" width={16} height={11} />
             </span>
           </button>
           <div

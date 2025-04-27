@@ -34,16 +34,16 @@ const faqItems = [
 
 const SectionNineAsk: FC = () => {
   return (
-    <section className="">
+    <section className="relative">
       <Image
         src={sectionframegreen}
         alt="section_top_vector"
         layout="intrinsic"
-        className="-mb-1 w-full rotate-180 object-contain"
+        className="absolute -top-10 -z-1 -mb-1 w-full rotate-180 object-contain md:-top-20 xl:-top-40"
       />
-      <div className="bg-greenlight">
+      <div className="bg-greenlight px-6 pt-20 pb-20 xl:pt-10">
         <div className="relative mx-auto max-w-5xl">
-          <h1 className="mb-6 text-center !text-white">People often ask</h1>
+          <h1 className="mb-8 text-center !text-white">People often ask</h1>
           <Accordion items={faqItems} />
         </div>
       </div>
