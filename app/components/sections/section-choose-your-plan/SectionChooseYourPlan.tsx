@@ -4,11 +4,11 @@ import payment from "@/app/vectors/payment.svg";
 import sectionframe from "@/app/vectors/sectionframe.svg";
 import Image from "next/image";
 import { useState } from "react";
-import Modal from "../checkout/Modal";
+import Modal from "../../checkout/Modal";
 import { dummyCardData } from "./dummyCardData";
 import PlanCard from "./PlanCard";
 
-const ChooseYourPlanSection = () => {
+const SectionChooseYourPlan = () => {
   const [selectedPlan, setSelectedPlan] = useState<number>(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -101,4 +101,4 @@ const ChooseYourPlanSection = () => {
   );
 };
 
-export default ChooseYourPlanSection;
+export default SectionChooseYourPlan;

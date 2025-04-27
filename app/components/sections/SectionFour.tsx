@@ -1,5 +1,8 @@
 "use client";
-import userbrainfull from "@/public/images/user-brain-full.png";
+import { useIsMobile } from "@/app/hooks/useMediaQuery";
+import sectionframegreen from "@/app/vectors/sectionframe-green.svg";
+import userbrain_full from "@/public/images/user-brain-full.png";
+import userbrain_mobile from "@/public/images/user-brain-mobile.png";
 import Image from "next/image";
 
 const statistics = [
@@ -26,11 +29,11 @@ interface StatisticItemProps {
 
 const StatisticItem = ({ percentage, description }: StatisticItemProps) => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col items-center gap-4 md:items-baseline">
       <span className="text-rainbow w-fit text-4xl font-extrabold xl:text-6xl">
         {percentage}
       </span>
-      <p className="max-w-96 font-medium text-white xl:text-lg">
+      <p className="max-w-96 font-medium text-white max-md:text-center xl:text-lg">
         {description}
       </p>
     </div>
@@ -38,15 +41,30 @@ const StatisticItem = ({ percentage, description }: StatisticItemProps) => {
 };
 
 const SectionFour = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section className="relative aspect-[5/4] w-full py-1">
-      <Image
-        src={userbrainfull}
-        alt="section_htop_vector"
-        fill
-        className="object-fill_"
-      />
-      <div className="absolute top-2/5 flex -translate-y-1/2 flex-col gap-10 pl-20 lg:right-0 lg:w-1/2 xl:right-0 xl:w-1/2">
+      <div
+        className={`relative aspect-square ${isMobile ? "after:bg-greenlight after:absolute after:right-0 after:bottom-0 after:left-0 after:h-1/2" : ""}`}
+      >
+        {isMobile ? (
+          <Image
+            src={userbrain_mobile}
+            alt="user_brain"
+            fill
+            className="z-10"
+          />
+        ) : (
+          <Image
+            src={userbrain_full}
+            alt="user_brain"
+            fill
+            className="w-full"
+          />
+        )}
+      </div>
+      <div className="bg-greenlight border-red-500_ border_ right-0 z-20 flex flex-col items-center gap-10 px-4 max-md:py-10 md:absolute md:top-2/5 md:w-1/2 md:-translate-y-1/2">
         {statistics.map((stat, index) => (
           <StatisticItem
             key={index}
@@ -55,6 +73,15 @@ const SectionFour = () => {
           />
         ))}
       </div>
+
+      {isMobile && (
+        <Image
+          src={sectionframegreen}
+          alt="section_top_vector"
+          layout="intrinsic"
+          className="-mt-1 w-full object-contain"
+        />
+      )}
     </section>
   );
 };

@@ -78,7 +78,7 @@ const Card: FC<CardProps> = ({ image, colorCode, title, list }) => {
   );
 };
 
-const CardsSection: FC = () => {
+const SectionThree: FC = () => {
   return (
     <section className="w-full px-4 py-16 md:px-8">
       <div className="container mx-auto flex max-w-4xl flex-col justify-between gap-8 md:flex-row md:gap-9">
@@ -101,4 +101,4 @@ const CardsSection: FC = () => {
   );
 };
 
-export default CardsSection;
+export default SectionThree;

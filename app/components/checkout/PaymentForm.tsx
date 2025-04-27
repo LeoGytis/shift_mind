@@ -13,7 +13,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import FormInput from "../FormInput";
-import { dummyCardData } from "../choose-plan-section/dummyCardData";
+import { dummyCardData } from "../sections/section-choose-your-plan/dummyCardData";
 
 interface FormValues {
   cardNumber: string;
