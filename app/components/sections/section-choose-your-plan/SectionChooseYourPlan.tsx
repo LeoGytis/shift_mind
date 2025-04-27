@@ -82,7 +82,7 @@ const SectionChooseYourPlan = () => {
             </article>
           </div>
         </div>
-        <div className="relative h-[180px]">
+        <div className="relative h-[80px] md:h-[180px]">
           <Image
             src={sectionframe}
             alt="section_bottom_vector"

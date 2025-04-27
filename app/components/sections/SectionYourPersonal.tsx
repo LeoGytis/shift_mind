@@ -66,7 +66,7 @@ const SymtomsCard: FC<SymtomsCardProps> = ({
 
 const SectionYourPersonal: FC = () => {
   return (
-    <section className="mx-auto flex max-w-5xl flex-col items-center px-6 py-20">
+    <section className="mx-auto flex max-w-5xl flex-col items-center px-6 py-10 md:py-20">
       <h1 className="text-greendark mb-10 max-w-xl px-6 text-center !text-3xl md:mb-20 md:px-0 md:!text-4xl">
         Your Personal <br /> Procrastination Summary
       </h1>
