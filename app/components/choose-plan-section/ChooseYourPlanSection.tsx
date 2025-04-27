@@ -45,7 +45,7 @@ const ChooseYourPlanSection = () => {
               </p>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="background-gradient mb-8 w-full cursor-pointer rounded-3xl py-6 lg:w-2/3"
+                className="background-rainbow mb-8 w-full cursor-pointer rounded-3xl py-6 lg:w-2/3"
               >
                 GET MY PLAN
               </button>

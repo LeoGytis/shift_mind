@@ -179,7 +179,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
             onChange={(e, fieldOnChange) => handleCvvChange(e, fieldOnChange)}
           />
         </div>
-        <button className="background-gradient mt-4 w-full cursor-pointer rounded-3xl py-6 font-semibold text-white">
+        <button className="background-rainbow mt-4 w-full cursor-pointer rounded-3xl py-6 font-semibold text-white">
           SUBMIT SECURE ORDER
         </button>
         {submitError && (

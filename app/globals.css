@@ -18,7 +18,7 @@
   --color-green-lightest: #a8c6c4;
   --color-greenlight: #1e6864;
   --color-greendark: #0a3634;
-  --color-gradient: linear-gradient(90deg, #f175b9, #8089ff, #3df7ff);
+  --color-rainbow: linear-gradient(90deg, #f175b9, #8089ff, #3df7ff);
 }
 
 body {
@@ -44,14 +44,14 @@ h3 {
 input:focus {
   border: solid 1px transparent;
   border-radius: 1rem;
-  background-image: linear-gradient(white, white), var(--color-gradient);
+  background-image: linear-gradient(white, white), var(--color-rainbow);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   outline: none;
 }
 
-.background-gradient {
-  background: var(--color-gradient);
+.background-rainbow {
+  background: var(--color-rainbow);
 }
 
 .active-shadow {
@@ -68,10 +68,18 @@ input:focus {
   transition: all 0.3s ease;
 }
 
-.gradient-border {
-  background-image: linear-gradient(white, white), var(--color-gradient);
+.rainbow-border {
+  background-image: linear-gradient(white, white), var(--color-rainbow);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border: 2px solid transparent;
   border-radius: 1.5rem;
+}
+
+.text-rainbow {
+  background: var(--color-rainbow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
