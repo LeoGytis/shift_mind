@@ -22,7 +22,7 @@ const SectionChooseYourPlan = () => {
           className="-mb-1 w-full object-contain"
         />
         <div className="bg-bggreen w-full px-4 py-5 text-white">
-          <div className="container mx-auto flex flex-col items-center gap-13">
+          <div className="mx-auto flex max-w-6xl flex-col items-center gap-13">
             <h1 className="text-center !text-white">Choose Your Plan</h1>
 
             {/* ----- Plans Article ----- */}

@@ -31,7 +31,7 @@ const planData: PlanCardProps[] = [
 
 const SectionFivePlan: FC = () => {
   return (
-    <section className="container mx-auto px-6 py-10 md:px-8">
+    <section className="mx-auto max-w-5xl px-6 py-10 md:px-8">
       <h1 className="mb-10 text-center md:mb-20">
         Your Procrastination plan <br /> will help you:
       </h1>

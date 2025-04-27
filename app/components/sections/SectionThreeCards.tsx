@@ -78,10 +78,10 @@ const Card: FC<CardProps> = ({ image, colorCode, title, list }) => {
   );
 };
 
-const SectionThree: FC = () => {
+const SectionThreeCards: FC = () => {
   return (
-    <section className="w-full px-4 py-16 md:px-8">
-      <div className="container mx-auto flex max-w-4xl flex-col justify-between gap-8 md:flex-row md:gap-9">
+    <section className="mx-auto max-w-5xl px-4 py-16 md:px-8">
+      <div className="mx-auto flex max-w-5xl flex-col justify-between gap-8 md:flex-row md:gap-9">
         <Card {...CardOne} />
 
         {/* Arrow Section */}
@@ -101,4 +101,4 @@ const SectionThree: FC = () => {
   );
 };
 
-export default SectionThree;
+export default SectionThreeCards;

@@ -40,50 +40,51 @@ const StatisticItem = ({ percentage, description }: StatisticItemProps) => {
   );
 };
 
-const SectionFour = () => {
+const SectionFourHero = () => {
   const isMobile = useIsMobile();
 
   return (
-    <section className="relative aspect-[5/4] w-full py-1">
-      <div
-        className={`relative aspect-square ${isMobile ? "after:bg-greenlight after:absolute after:right-0 after:bottom-0 after:left-0 after:h-1/2" : ""}`}
-      >
-        {isMobile ? (
-          <Image
-            src={userbrain_mobile}
-            alt="user_brain"
-            fill
-            className="z-10"
-          />
-        ) : (
-          <Image
-            src={userbrain_full}
-            alt="user_brain"
-            fill
-            className="w-full"
-          />
-        )}
-      </div>
-      <div className="bg-greenlight border-red-500_ border_ right-0 z-20 flex flex-col items-center gap-10 px-4 max-md:py-10 md:absolute md:top-2/5 md:w-1/2 md:-translate-y-1/2">
-        {statistics.map((stat, index) => (
-          <StatisticItem
-            key={index}
-            percentage={stat.percentage}
-            description={stat.description}
-          />
-        ))}
-      </div>
-
+    <>
+      <section className="relative aspect-[5/4] w-full">
+        <div
+          className={`relative aspect-square ${isMobile ? "after:bg-greenlight after:absolute after:right-0 after:bottom-0 after:left-0 after:h-1/2" : ""}`}
+        >
+          {isMobile ? (
+            <Image
+              src={userbrain_mobile}
+              alt="user_brain"
+              fill
+              className="z-10"
+            />
+          ) : (
+            <Image
+              src={userbrain_full}
+              alt="user_brain"
+              fill
+              className="w-full"
+            />
+          )}
+        </div>
+        <div className="bg-greenlight right-0 z-20 flex flex-col items-center gap-10 px-4 max-md:py-10 md:absolute md:top-2/5 md:w-1/2 md:-translate-y-1/2">
+          {statistics.map((stat, index) => (
+            <StatisticItem
+              key={index}
+              percentage={stat.percentage}
+              description={stat.description}
+            />
+          ))}
+        </div>
+      </section>
       {isMobile && (
         <Image
           src={sectionframegreen}
           alt="section_top_vector"
           layout="intrinsic"
-          className="-mt-1 w-full object-contain"
+          className="-mt-1"
         />
       )}
-    </section>
+    </>
   );
 };
 
-export default SectionFour;
+export default SectionFourHero;
