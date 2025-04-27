@@ -1,8 +1,8 @@
+import TopBar from "./components/layout/TopBar";
 import SectionChooseYourPlan from "./components/sections/section-choose-your-plan/SectionChooseYourPlan";
 import SectionFour from "./components/sections/SectionFour";
 import SectionThree from "./components/sections/SectionThree";
 import SectionYourPersonal from "./components/sections/SectionYourPersonal";
-import TopBar from "./components/TopBar";
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
 "use client";
-import { useIsMobile } from "@/app/hooks/useMediaQuery";
+import { useIsMobile } from "@/app/utils/useMediaQuery";
 import sectionframegreen from "@/app/vectors/sectionframe-green.svg";
 import userbrain_full from "@/public/images/user-brain-full.png";
 import userbrain_mobile from "@/public/images/user-brain-mobile.png";
