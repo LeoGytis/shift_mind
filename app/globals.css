@@ -70,12 +70,30 @@ input:focus {
   transition: all 0.3s ease;
 }
 
-.rainbow-border {
+.border-rainbow {
   background-image: linear-gradient(white, white), var(--color-rainbow);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border: 2px solid transparent;
   border-radius: 1.5rem;
+}
+
+.shadow-rainbow {
+  position: relative;
+}
+
+.shadow-rainbow::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  background: var(--color-rainbow);
+  border-radius: 0.5rem;
+  opacity: 0.5;
+  filter: blur(10px);
+  z-index: -1;
 }
 
 .text-rainbow {

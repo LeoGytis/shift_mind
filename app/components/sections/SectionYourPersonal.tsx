@@ -66,25 +66,23 @@ const SymtomsCard: FC<SymtomsCardProps> = ({
 
 const SectionYourPersonal: FC = () => {
   return (
-    <section className="w-full px-4 py-10 md:px-8">
-      <div className="container mx-auto flex max-w-4xl flex-col items-center">
-        <h1 className="text-greendark mb-8 max-w-xl px-6 text-center !text-3xl md:px-0 md:!text-4xl">
-          Your Personal <br /> Procrastination Summary
-        </h1>
-        <div className="flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center">
-          {symptomsData.map((symptom, index) => (
-            <div key={index} className="w-full md:w-[calc(50%-12px)]">
-              <SymtomsCard {...symptom} />
-            </div>
-          ))}
-          <div className="bg-bggreen relative mx-auto aspect-[3/2] w-full rounded-3xl md:w-1/2">
-            <Image
-              src="/images/graph.png"
-              alt="graph"
-              fill
-              className="p-4 md:p-10"
-            />
+    <section className="mx-auto flex max-w-5xl flex-col items-center px-6 py-20">
+      <h1 className="text-greendark mb-10 max-w-xl px-6 text-center !text-3xl md:mb-20 md:px-0 md:!text-4xl">
+        Your Personal <br /> Procrastination Summary
+      </h1>
+      <div className="flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center">
+        {symptomsData.map((symptom, index) => (
+          <div key={index} className="w-full md:w-[calc(50%-12px)]">
+            <SymtomsCard {...symptom} />
           </div>
+        ))}
+        <div className="bg-bggreen relative mx-auto aspect-[3/2] w-full rounded-3xl md:w-1/2">
+          <Image
+            src="/images/graph.png"
+            alt="graph"
+            fill
+            className="p-4 md:p-10"
+          />
         </div>
       </div>
     </section>

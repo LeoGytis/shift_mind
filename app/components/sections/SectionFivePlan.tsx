@@ -29,7 +29,7 @@ const planData: PlanCardProps[] = [
   },
 ];
 
-const SectionFive: FC = () => {
+const SectionFivePlan: FC = () => {
   return (
     <section className="container mx-auto px-6 py-10 md:px-8">
       <h1 className="mb-10 text-center md:mb-20">
@@ -56,4 +56,4 @@ const SectionFive: FC = () => {
   );
 };
 
-export default SectionFive;
+export default SectionFivePlan;
