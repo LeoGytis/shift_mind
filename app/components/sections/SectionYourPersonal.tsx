@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FC } from "react";
 import { cn } from "../../utils/cn";
 
@@ -44,7 +45,7 @@ const SymtomsCard: FC<SymtomsCardProps> = ({
       <h4 className="mb-2 text-xl font-semibold text-white">{title}</h4>
       <p
         className={cn(
-          "mb-4 font-bold text-[#3DF7FF] uppercase",
+          "text-electriclight mb-4 font-bold uppercase",
           intensity === "high" && "text-pink",
         )}
       >
@@ -54,7 +55,7 @@ const SymtomsCard: FC<SymtomsCardProps> = ({
       <div className="bg-greenlight mt-4 h-2 w-full rounded-full">
         <div
           className={cn(
-            "h-full w-[66%] rounded-full bg-[#3DF7FF]",
+            "bg-electriclight h-full w-[66%] rounded-full",
             intensity === "high" && "bg-pink",
           )}
         />
@@ -67,13 +68,23 @@ const SectionYourPersonal: FC = () => {
   return (
     <section className="w-full px-4 py-10 md:px-8">
       <div className="container mx-auto flex max-w-4xl flex-col items-center">
-        <h1 className="text-greendark mb-8 max-w-xl text-center">
-          Your Personal Procrastination Summary
+        <h1 className="text-greendark mb-8 max-w-xl px-6 text-center !text-3xl md:px-0 md:!text-4xl">
+          Your Personal <br /> Procrastination Summary
         </h1>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center">
           {symptomsData.map((symptom, index) => (
-            <SymtomsCard key={index} {...symptom} />
+            <div key={index} className="w-full md:w-[calc(50%-12px)]">
+              <SymtomsCard {...symptom} />
+            </div>
           ))}
+          <div className="bg-bggreen relative mx-auto aspect-[3/2] w-full rounded-3xl md:w-1/2">
+            <Image
+              src="/images/graph.png"
+              alt="graph"
+              fill
+              className="p-4 md:p-10"
+            />
+          </div>
         </div>
       </div>
     </section>
