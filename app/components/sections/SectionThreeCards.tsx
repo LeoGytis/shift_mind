@@ -3,20 +3,14 @@ import Image from "next/image";
 import { FC } from "react";
 
 interface CardProps {
-  image: {
-    src: string;
-    alt: string;
-  };
+  imageSrc: string;
   colorCode: string;
   title: string;
   list: string[];
 }
 
 const CardOne: CardProps = {
-  image: {
-    src: "/images/procrastination.jpg",
-    alt: "Procrastination Symptoms",
-  },
+  imageSrc: "images/procrastination.jpg",
   colorCode: "#ff4d8f",
   title: "PROCRASTINATION SYMPTOMS:",
   list: [
@@ -29,10 +23,7 @@ const CardOne: CardProps = {
 };
 
 const CardTwo: CardProps = {
-  image: {
-    src: "/images/your_goals.jpg",
-    alt: "Your Goals",
-  },
+  imageSrc: "images/your_goals.jpg",
   colorCode: "#5a91ff",
   title: "YOUR GOAL:",
   list: [
@@ -44,14 +35,14 @@ const CardTwo: CardProps = {
   ],
 };
 
-const Card: FC<CardProps> = ({ image, colorCode, title, list }) => {
+const Card: FC<CardProps> = ({ imageSrc, colorCode, title, list }) => {
   return (
     <div className="card-shadow hover-card-shadow group w-full rounded-3xl bg-white transition-all duration-300 md:w-full lg:p-0">
       <div className="flex w-full flex-col gap-6">
         <div className="h-full overflow-hidden rounded-t-3xl">
           <Image
-            src={image.src}
-            alt={image.alt}
+            src={imageSrc}
+            alt={title}
             width={400}
             height={293}
             className="h-[293px] w-full transform object-cover duration-700 ease-out hover:scale-110"
@@ -84,7 +75,6 @@ const SectionThreeCards: FC = () => {
       <div className="mx-auto flex max-w-5xl flex-col justify-between gap-8 md:flex-row md:gap-9">
         <Card {...CardOne} />
 
-        {/* Arrow Section */}
         <div className="flex items-center justify-center">
           <Image
             src={arrows}
