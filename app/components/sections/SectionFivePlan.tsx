@@ -19,7 +19,7 @@ const planData: PlanCardProps[] = [
       "Learn new techniques to improve your concentration, effectively handle time, and establish positive daily routines.",
   },
   {
-    icon: "/icons/book.svg",
+    icon: "icons/book.svg",
     description: "Build new habits with our prepared guides",
   },
   {
