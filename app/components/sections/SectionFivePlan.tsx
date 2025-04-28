@@ -9,17 +9,17 @@ interface PlanCardProps {
 
 const planData: PlanCardProps[] = [
   {
-    icon: "/icons/report.svg",
+    icon: "@/public/icons/report.svg",
     description:
       "Keep your motivation up by having daily reports of your progress and achievements",
   },
   {
-    icon: "/icons/hourglass.svg",
+    icon: "@/public/icons/hourglass.svg",
     description:
       "Learn new techniques to improve your concentration, effectively handle time, and establish positive daily routines.",
   },
   {
-    icon: "/icons/book.svg",
+    icon: "@/icons/book.svg",
     description: "Build new habits with our prepared guides",
   },
   {
