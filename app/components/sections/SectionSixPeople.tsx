@@ -11,14 +11,14 @@ interface TestimonialProps {
 
 const testimonialData: TestimonialProps[] = [
   {
-    image: "/images/users/user01.png",
+    image: "images/users/user01.png",
     name: "Samantha C., 38",
     location: "Kansas City, Missouri",
     description:
       "“Years of procrastination left my life in shambles. I knew that something needed to change.\n \nShiftMind helped me realize that all my life I'd been suffering from overwhelm anxiety and task aversion and helped me embrace my unique productivity style - Energy-Driven Achiever!”",
   },
   {
-    image: "/images/users/user02.png",
+    image: "images/users/user02.png",
     name: "Julia W., 33",
     location: "Albuquerque, New Mexico",
     description:

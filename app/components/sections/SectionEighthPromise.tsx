@@ -69,7 +69,7 @@ const SectionEighthPromise: FC = () => {
           <div className="mx-auto">
             <div className="flex items-center gap-6">
               <Image
-                src="/images/users/user03.png"
+                src="images/users/user03.png"
                 alt="COT_TIMOTHY"
                 width={110}
                 height={110}
