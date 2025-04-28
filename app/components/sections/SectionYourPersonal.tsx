@@ -78,7 +78,7 @@ const SectionYourPersonal: FC = () => {
         ))}
         <div className="bg-bggreen relative mx-auto aspect-[3/2] w-full rounded-3xl md:w-1/2">
           <Image
-            src="/images/graph.png"
+            src="@/public/images/graph.png"
             alt="graph"
             fill
             className="p-4 md:p-10"
