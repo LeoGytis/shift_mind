@@ -1,21 +1,23 @@
 "use client";
 import { auth } from "@/app/auth/config";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
-const Register = () => {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [createUserWithEmailAndPassword] =
-    useCreateUserWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const router = useRouter();
 
-  const handleRegister = async () => {
+  const handleSignIn = async () => {
     try {
-      const res = await createUserWithEmailAndPassword(email, password);
+      const res = await signInWithEmailAndPassword(email, password);
       console.log({ res });
       sessionStorage.setItem("user", "true");
       setEmail("");
       setPassword("");
+      router.push("/");
     } catch (e) {
       console.error(e);
     }
@@ -24,7 +26,7 @@ const Register = () => {
   return (
     <div className="bg-bgligth flex min-h-screen items-center justify-center">
       <div className="bg-bggreen w-96 space-y-6 rounded-lg p-10 shadow-xl">
-        <h1 className="!text-electric">REGISTER</h1>
+        <h1 className="!text-electric">Sign In</h1>
         <input
           type="email"
           placeholder="Email"
@@ -40,14 +42,14 @@ const Register = () => {
           className="mb-4 w-full rounded bg-white p-3 text-black placeholder-gray-500 outline-none"
         />
         <button
-          onClick={handleRegister}
+          onClick={handleSignIn}
           className="background-rainbow flex cursor-pointer rounded-lg px-5 py-1"
         >
-          Sign Up
+          Sign In
         </button>
       </div>
     </div>
   );
 };
 
-export default Register;
+export default SignIn;
