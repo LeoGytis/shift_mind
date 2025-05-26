@@ -1,29 +1,33 @@
-import brain from "@/public/images/brain.png";
-import Image from "next/image";
+import bookIcon from "@/elements/icons/book.svg";
+import hourglassIcon from "@/elements/icons/hourglass.svg";
+import planIcon from "@/elements/icons/plan.svg";
+import reportIcon from "@/elements/icons/report.svg";
+import brain from "@/elements/images/brain.png";
+import Image, { StaticImageData } from "next/image";
 import { FC } from "react";
 
 interface PlanCardProps {
-  icon: string;
+  icon: StaticImageData;
   description: string;
 }
 
 const planData: PlanCardProps[] = [
   {
-    icon: "icons/report.svg",
+    icon: reportIcon,
     description:
       "Keep your motivation up by having daily reports of your progress and achievements",
   },
   {
-    icon: "icons/hourglass.svg",
+    icon: hourglassIcon,
     description:
       "Learn new techniques to improve your concentration, effectively handle time, and establish positive daily routines.",
   },
   {
-    icon: "icons/book.svg",
+    icon: bookIcon,
     description: "Build new habits with our prepared guides",
   },
   {
-    icon: "icons/plan.svg",
+    icon: planIcon,
     description:
       "Have an action plan to break your procrastination cycle and manage procrastination",
   },

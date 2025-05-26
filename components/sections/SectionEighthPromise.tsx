@@ -1,3 +1,4 @@
+import userImage from "@/elements/images/users/user03.png";
 import sectionframerainbow from "@/elements/vectors/sectionframe-rainbow.svg";
 import Image from "next/image";
 import { FC } from "react";
@@ -69,7 +70,7 @@ const SectionEighthPromise: FC = () => {
           <div className="mx-auto">
             <div className="flex items-center gap-6">
               <Image
-                src="images/users/user03.png"
+                src={userImage}
                 alt="COT_TIMOTHY"
                 width={110}
                 height={110}

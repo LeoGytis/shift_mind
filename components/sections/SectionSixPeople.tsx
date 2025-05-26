@@ -1,9 +1,11 @@
+import user01 from "@/elements/images/users/user01.png";
+import user02 from "@/elements/images/users/user02.png";
 import star from "@/elements/vectors/star.svg";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { FC } from "react";
 
 interface TestimonialProps {
-  image: string;
+  image: StaticImageData;
   name: string;
   location: string;
   description: string;
@@ -11,14 +13,14 @@ interface TestimonialProps {
 
 const testimonialData: TestimonialProps[] = [
   {
-    image: "images/users/user01.png",
+    image: user01,
     name: "Samantha C., 38",
     location: "Kansas City, Missouri",
     description:
       "“Years of procrastination left my life in shambles. I knew that something needed to change.\n \nShiftMind helped me realize that all my life I'd been suffering from overwhelm anxiety and task aversion and helped me embrace my unique productivity style - Energy-Driven Achiever!”",
   },
   {
-    image: "images/users/user02.png",
+    image: user02,
     name: "Julia W., 33",
     location: "Albuquerque, New Mexico",
     description:

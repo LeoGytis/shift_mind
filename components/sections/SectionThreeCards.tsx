@@ -1,16 +1,18 @@
+import procrastinationImage from "@/elements/images/procrastination.jpg";
+import goalsImage from "@/elements/images/your_goals.jpg";
 import arrows from "@/elements/vectors/arrows.svg";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { FC } from "react";
 
 interface CardProps {
-  imageSrc: string;
+  imageSrc: StaticImageData;
   colorCode: string;
   title: string;
   list: string[];
 }
 
 const CardOne: CardProps = {
-  imageSrc: "images/procrastination.jpg",
+  imageSrc: procrastinationImage,
   colorCode: "#ff4d8f",
   title: "PROCRASTINATION SYMPTOMS:",
   list: [
@@ -23,7 +25,7 @@ const CardOne: CardProps = {
 };
 
 const CardTwo: CardProps = {
-  imageSrc: "images/your_goals.jpg",
+  imageSrc: goalsImage,
   colorCode: "#5a91ff",
   title: "YOUR GOAL:",
   list: [

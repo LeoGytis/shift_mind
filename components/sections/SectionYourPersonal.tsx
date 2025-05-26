@@ -1,3 +1,4 @@
+import graphImage from "@/elements/images/graph.png";
 import Image from "next/image";
 import { FC } from "react";
 import { cn } from "../../utils/cn";
@@ -77,12 +78,7 @@ const SectionYourPersonal: FC = () => {
           </div>
         ))}
         <div className="bg-bggreen relative mx-auto aspect-[3/2] w-full rounded-3xl md:w-1/2">
-          <Image
-            src="images/graph.png"
-            alt="graph"
-            fill
-            className="p-4 md:p-10"
-          />
+          <Image src={graphImage} alt="graph" fill className="p-4 md:p-10" />
         </div>
       </div>
     </section>
