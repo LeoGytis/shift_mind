@@ -1,5 +1,5 @@
 "use client";
-import { auth } from "@/app/auth/config";
+import { auth } from "@/utils/firebaseConfig";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";

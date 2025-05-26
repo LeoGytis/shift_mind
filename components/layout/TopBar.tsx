@@ -1,10 +1,15 @@
 "use client";
 import sectionframegreen from "@/elements/vectors/sectionframe-green.svg";
 import shiftmind from "@/elements/vectors/shiftmind.svg";
+import { auth } from "@/utils/firebaseConfig";
+import { signOut } from "firebase/auth";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const TopBar = () => {
+  const [user] = useAuthState(auth);
   const [timeLeft, setTimeLeft] = useState({
     minutes: 15,
     seconds: 0,
@@ -47,9 +52,22 @@ const TopBar = () => {
             GET&nbsp;<span className="hidden md:block">MY PLAN</span>
           </button>
         </div>
-        <button className="background-rainbow mr-6 flex cursor-pointer rounded-lg px-5 py-1 md:ml-4 md:px-5 md:py-2">
-          Login
-        </button>
+        <Link href="/sign-up">
+          <button className="background-rainbow mr-6 flex cursor-pointer rounded-lg px-5 py-1 md:ml-4 md:px-5 md:py-2">
+            Login
+          </button>
+        </Link>
+        {user && (
+          <button
+            onClick={() => {
+              signOut(auth);
+              sessionStorage.removeItem("user");
+            }}
+            className="background-rainbow mr-6 flex cursor-pointer rounded-lg px-5 py-1 md:ml-4 md:px-5 md:py-2"
+          >
+            Log Out
+          </button>
+        )}
       </div>
       <div className="bg-greenlight relative h-24 lg:h-4">
         <Image

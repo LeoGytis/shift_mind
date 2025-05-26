@@ -1,15 +1,15 @@
 "use client";
-import { auth } from "@/app/auth/config";
+import { auth } from "@/utils/firebaseConfig";
 import { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
-const Register = () => {
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [createUserWithEmailAndPassword] =
     useCreateUserWithEmailAndPassword(auth);
 
-  const handleRegister = async () => {
+  const handleSignUp = async () => {
     try {
       const res = await createUserWithEmailAndPassword(email, password);
       console.log({ res });
@@ -24,7 +24,7 @@ const Register = () => {
   return (
     <div className="bg-bgligth flex min-h-screen items-center justify-center">
       <div className="bg-bggreen w-96 space-y-6 rounded-lg p-10 shadow-xl">
-        <h1 className="!text-electric">REGISTER</h1>
+        <h1 className="!text-electric">SignUp</h1>
         <input
           type="email"
           placeholder="Email"
@@ -40,7 +40,7 @@ const Register = () => {
           className="mb-4 w-full rounded bg-white p-3 text-black placeholder-gray-500 outline-none"
         />
         <button
-          onClick={handleRegister}
+          onClick={handleSignUp}
           className="background-rainbow flex cursor-pointer rounded-lg px-5 py-1"
         >
           Sign Up
@@ -50,4 +50,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SignUp;
