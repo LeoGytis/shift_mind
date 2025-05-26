@@ -1,18 +1,18 @@
-import { creditCardSchema } from "@/app/utils/validationSchemas";
-import apple from "@/app/vectors/apple.svg";
-import creditcardpink from "@/app/vectors/creditcardpink.svg";
-import creditcards from "@/app/vectors/creditcards.svg";
-import discover from "@/app/vectors/discover.svg";
-import mastercardblue from "@/app/vectors/mastercardblue.svg";
-import mastercardyellow from "@/app/vectors/mastercardyellow.svg";
-import paypal from "@/app/vectors/paypal.svg";
-import subtract from "@/app/vectors/subtract.svg";
-import visa from "@/app/vectors/visa.svg";
+import { dummyCardData } from "@/components/sections/section-choose-your-plan/dummyCardData";
+import apple from "@/elements/vectors/apple.svg";
+import creditcardpink from "@/elements/vectors/creditcardpink.svg";
+import creditcards from "@/elements/vectors/creditcards.svg";
+import discover from "@/elements/vectors/discover.svg";
+import mastercardblue from "@/elements/vectors/mastercardblue.svg";
+import mastercardyellow from "@/elements/vectors/mastercardyellow.svg";
+import paypal from "@/elements/vectors/paypal.svg";
+import subtract from "@/elements/vectors/subtract.svg";
+import visa from "@/elements/vectors/visa.svg";
+import { creditCardSchema } from "@/utils/validationSchemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { dummyCardData } from "../sections/section-choose-your-plan/dummyCardData";
 import FormInput from "../ui/FormInput";
 
 interface FormValues {

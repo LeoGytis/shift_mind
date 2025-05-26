@@ -1,5 +1,5 @@
 "use client";
-import sectionframegreen from "@/app/vectors/sectionframe-green.svg";
+import sectionframegreen from "@/elements/vectors/sectionframe-green.svg";
 import Image from "next/image";
 import { FC } from "react";
 import Accordion from "../ui/Accordion";

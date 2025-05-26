@@ -1,8 +1,8 @@
 "use client";
-import { useIsMobile } from "@/app/utils/useMediaQuery";
-import sectionframegreen from "@/app/vectors/sectionframe-green.svg";
+import sectionframegreen from "@/elements/vectors/sectionframe-green.svg";
 import userbrain_full from "@/public/images/user-brain-full.png";
 import userbrain_mobile from "@/public/images/user-brain-mobile.png";
+import { useIsMobile } from "@/utils/useMediaQuery";
 import Image from "next/image";
 
 const statistics = [

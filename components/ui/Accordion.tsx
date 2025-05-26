@@ -1,6 +1,6 @@
 "use client";
-import { cn } from "@/app/utils/cn";
-import arrow from "@/app/vectors/arrow.svg";
+import arrow from "@/elements/vectors/arrow.svg";
+import { cn } from "@/utils/cn";
 import Image from "next/image";
 import { FC, useState } from "react";
 

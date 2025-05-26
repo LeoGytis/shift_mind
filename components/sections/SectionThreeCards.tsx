@@ -1,4 +1,4 @@
-import arrows from "@/app/vectors/arrows.svg";
+import arrows from "@/elements/vectors/arrows.svg";
 import Image from "next/image";
 import { FC } from "react";
 

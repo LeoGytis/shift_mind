@@ -1,7 +1,7 @@
 "use client";
-import guarantee from "@/app/vectors/guarantee.svg";
-import payment from "@/app/vectors/payment.svg";
-import sectionframe from "@/app/vectors/sectionframe.svg";
+import guarantee from "@/elements/vectors/guarantee.svg";
+import payment from "@/elements/vectors/payment.svg";
+import sectionframe from "@/elements/vectors/sectionframe.svg";
 import Image from "next/image";
 import { useState } from "react";
 import Modal from "../../checkout/Modal";

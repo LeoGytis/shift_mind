@@ -1,4 +1,4 @@
-import star from "@/app/vectors/star.svg";
+import star from "@/elements/vectors/star.svg";
 import Image from "next/image";
 import { FC } from "react";
 

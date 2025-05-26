@@ -1,6 +1,6 @@
 "use client";
-import sectionframegreen from "@/app/vectors/sectionframe-green.svg";
-import shiftmind from "@/app/vectors/shiftmind.svg";
+import sectionframegreen from "@/elements/vectors/sectionframe-green.svg";
+import shiftmind from "@/elements/vectors/shiftmind.svg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 

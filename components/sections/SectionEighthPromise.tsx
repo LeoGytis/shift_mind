@@ -1,4 +1,4 @@
-import sectionframerainbow from "@/app/vectors/sectionframe-rainbow.svg";
+import sectionframerainbow from "@/elements/vectors/sectionframe-rainbow.svg";
 import Image from "next/image";
 import { FC } from "react";
 
